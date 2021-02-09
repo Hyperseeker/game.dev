@@ -150,7 +150,7 @@ main section .component:hover {
 
 	border-color: grey;
 
-	box-shadow: 0 0 2px grey;
+	box-shadow: 0 0 12px hsl(0, 0%, 50%, 0.25);
 
 }
 

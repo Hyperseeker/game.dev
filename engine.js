@@ -474,6 +474,12 @@ function getFeature (key, value) {
 
 }
 
+function pickOneFromArray (array) {
+
+	return array[Math.floor(Math.random() * (array.length - 1))];
+	
+}
+
 
 // > INITIALIZATION
 

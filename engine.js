@@ -137,6 +137,7 @@ function handleRangeChange (event) {
 
 function storeRangeValueToProject (id, value) {
 
+	// ? set value to `null` instead?
 	return value === null ? delete Projects.temporary.values[id] : Projects.temporary.values[id] = value ;
 
 };

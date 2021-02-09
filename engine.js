@@ -30,6 +30,7 @@ class Project {
 	constructor () {
 
 		// TODO: set up random name for the new game by default
+
 		this.title = "";
 
 		this.features = [];

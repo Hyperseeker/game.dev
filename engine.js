@@ -418,7 +418,7 @@ function renderComponentPrequisites (component) {
 		<div class="prequisites">
 			${component.prequisites.map(prequisite => {
 
-				let fulfilled = Projects.temporary.features.includes(prequisite) ? "true" : "false";
+				let fulfilled = checkIfPrequisiteFulfilled(prequisite).toString();
 
 				let element = html`
 					<div class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id=${prequisite}>

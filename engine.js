@@ -94,7 +94,7 @@ function handleCheckboxToggle (event) {
 		let componentElement = document.querySelector(`[component-id="${component.id}"]`),
 			toggle           = componentElement.querySelector(`[type="checkbox"]`);
 		
-		toggle.disabled = !checkAllPrequisites(component);
+		toggle.disabled = !checkIfAllPrequisitesFulfilled(component);
 
 		let prequisitesElement = componentElement.querySelector(".prequisites");
 
@@ -174,7 +174,7 @@ function calculateProjectComplexity () {
 
 	let calculatedComplexity = toggled.map(id => {
 
-		let feature = COMPONENTS.filter(component => checkAllPrequisites(component)).find(component => component.id === id);
+		let feature = COMPONENTS.filter(component => checkIfAllPrequisitesFulfilled(component)).find(component => component.id === id);
 		
 		// * i.e. if `feature` is not on the list of components the prequisites for which are not fulfilled → are not workable
 		if (!feature) return base_complexity_parsed;
@@ -281,9 +281,7 @@ function renderComponentsList () {
 
 		let feature = getFeature("id", checkbox.id);
 
-		let result = checkAllPrequisites(feature);
-
-		checkbox.disabled = !result;
+		checkbox.disabled = !checkIfAllPrequisitesFulfilled(feature);
 
 	});
 
@@ -462,7 +460,7 @@ function checkPrequisite (prequisite) {
 
 };
 
-function checkAllPrequisites (component) {
+function checkIfAllPrequisitesFulfilled (component) {
 
 	return component.prequisites && component.prequisites.length
 				? component.prequisites.every(prequisite => checkPrequisite(prequisite))

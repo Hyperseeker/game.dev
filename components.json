@@ -1,0 +1,156 @@
+[
+	{
+		"id": "title",
+		"short": "titl",
+		"name": "Title",
+		"type": "input",
+		"category": "engine",
+		"subcategory": "presentation",
+		"placeholder": "Optional",
+		"description": [
+			"Title of the game. You may change it at any point during development or at release.",
+			"If no title is chosen, one would be generated randomly. It may also be changed later."
+		]
+	},
+	{
+		"id": "movementPedestrian",
+		"short": "mvpd",
+		"name": "Basic Movement",
+		"description": "Basic ground movement: walking, crouching (where appropriate), jumping (where appropriate), climbing over obstacles (where appropriate) etc.",
+		"type": "toggle",
+		"default": true,
+		"category": "gameplay",
+		"subcategory": "movement",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.02
+	},
+	{
+		"id": "movementPedestrianFluid",
+		"short": "mvpf",
+		"name": "Fluid Movement",
+		"description": "Enhanced ground movement: basic moves chainable without breaking the flow of the action",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"prequisites": [
+			"movementPedestrian"
+		],
+		"parent": "movementPedestrian",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.07
+	},
+	{
+		"id": "parkour",
+		"short": "mvpk",
+		"name": "Parkour",
+		"description": "Wider range of character motion enabling enhanced traversal of different types of terrain",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"prequisites": [
+			"movementPedestrian",
+			"movementPedestrianFluid"
+		],
+		"parent": "movementPedestrianFluid",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.17
+	},
+	{
+		"id": "flyingPersonal",
+		"short": "flpl",
+		"name": "Self-Flight",
+		"description": "Model flight without mechanical assistance",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.03
+	},
+	{
+		"id": "flyingVehicle",
+		"short": "flvh",
+		"name": "Aircraft Flight",
+		"description": "Model flight via mechanical means: plane / helicopter / rocket / etc.",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.10
+	},
+	{
+		"id": "drivingVehicle",
+		"short": "drvh",
+		"name": "Vehicle Driving",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.03
+	},
+	{
+		"id": "drivingVehicleAdvanced",
+		"short": "drva",
+		"name": "Advanced Vehicle Driving",
+		"type": "toggle",
+		"category": "gameplay",
+		"subcategory": "movement",
+		"prequisites": [
+			"drivingVehicle"
+		],
+		"parent": "drivingVehicle",
+		"skills": {
+			"motion": 1.03
+		},
+		"complexity": 1.10
+	},
+	{
+		"id": "moddability",
+		"short": "modd",
+		"name": "Moddability",
+		"type": "range",
+		"category": "engine",
+		"subcategory": "features",
+		"skills": {
+			"structure": 1.03
+		},
+		"values": [
+			{
+				"name": "Superficial",
+				"description": "Superficial TBD",
+				"complexity": 1.15
+			},
+			{
+				"name": "Basic",
+				"description": "Basic TBD",
+				"complexity": 1.32
+			},
+			{
+				"name": "Advanced",
+				"description": "Advanced TBD",
+				"complexity": 1.54
+			},
+			{
+				"name": "Deep",
+				"description": "Deep TBD",
+				"complexity": 1.78
+			},
+			{
+				"name": "Fundamental",
+				"description": "Fundamental TBD",
+				"complexity": 1.96
+			}
+		]
+	}
+]

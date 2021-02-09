@@ -1,0 +1,1 @@
+const toTitleCase = string => string.replace(/\w*/g, result => result.charAt(0).toUpperCase() + result.substr(1).toLowerCase());

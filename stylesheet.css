@@ -1,0 +1,255 @@
+/*  FONTS  */
+
+/*  insert fonts, or use "see <file with fonts>.css" */
+
+
+/*  VARIABLES  */
+
+:root {
+
+	/*  Colors  */
+	
+	/* colors */
+
+}
+
+
+/*  BASICS  */
+
+body {
+
+	display: flex;
+
+	min-height: 100vh;
+
+	margin: 0;
+
+	font-family: sans-serif;
+	line-height: 1.33;
+	
+	box-sizing: border-box;
+
+}
+
+aside,
+main { flex: 1; }
+
+p { margin: 0; }
+p + p { margin-block-start: 0.75em; }
+
+[type="range"] {
+	
+	--range-offset: 0.25ex;
+
+	width: calc(100% + var(--range-offset) * 2);
+
+	margin-inline-start: calc(var(--range-offset) * -1);
+
+}
+
+
+/*  SIDEBAR  */
+
+aside {
+
+	min-width: 10em;
+	max-width: 20vw;
+
+	background-color: grey;
+
+}
+
+aside .tab {
+
+	padding: 1em;
+
+	border-right: 1px solid;
+
+	text-align: center;
+
+}
+
+aside .tab.active {
+
+	border-right: none;
+	
+	background-color: white;
+
+}
+
+
+/*  > MAIN  */
+
+main {
+
+	max-width: 75ch;
+
+	padding: 5%;
+
+}
+
+main h1,
+main h2 {
+
+	margin: 0;
+
+}
+
+
+/*  >> Categories  */
+
+main article { /* ... */ }
+main article + article { margin-block-start: 3em; }
+
+main article h1 {
+	
+	font-size: 3.5em;
+
+	margin: 0 0 0.25em 0;
+
+}
+
+main article h1 + section { margin-block-start: 1em; }
+
+
+/*  >> Subcategories  */
+
+main section {
+
+    /* ... */
+	
+}
+
+main section + section { margin-block-start: 2em; }
+
+main section h2 {
+
+	margin-block-end: 0.5em;
+	
+	font-size: 2.5em;
+
+}
+
+/*  >>> Components  */
+
+main section .component {
+
+	flex-grow: 1;
+
+	border: 1px solid transparent;
+
+	padding: 1em;
+	margin: -1em;
+
+}
+main section .component:first-child { margin-inline-start: 0; }
+main section .component:last-child  { margin-inline-end:   0; }
+
+main section .component:hover {
+
+	border-color: grey;
+
+	box-shadow: 0 0 2px grey;
+
+}
+
+main section .component + .component { margin-block-start: 1em; }
+
+main section .component > * + * { margin-block-start: 0.5em; }
+
+main section .component .component {
+
+	margin: 0.75em -1.5em 0 1.5em;
+
+}
+
+/*  >>>> Component Details  */
+
+[type="checkbox"] { margin: 0; }
+
+[type="text"] {
+
+	width: 100%;
+
+	margin: 0.25em 0;
+	padding: 0.25em;
+
+	box-sizing: border-box;
+
+}
+
+[type="checkbox"],
+label { cursor: pointer; }
+
+[type="range"] { cursor: e-resize; }
+
+[disabled] { cursor: not-allowed; }
+
+.component [type="checkbox"] + label { margin-inline-start: 0.33em; }
+
+.component label,
+.component.input .title { font-weight: bold; }
+
+.component.range .title {
+
+	display: flex;
+	align-items: baseline;
+	
+}
+
+.component .complexity {
+	
+	margin-inline-start: 0.5em;
+
+	font-weight: normal;
+
+	opacity: 0.75;
+
+}
+
+.component.range .state { margin-inline-start: auto; }
+
+/*  >>> Derived  */
+
+.effort {
+
+	margin-block-start: 3em;
+	
+	font-size: 1.25em;
+    text-align: center;
+	
+}
+
+.days {
+
+	font-size: 2.5em;
+
+	margin: 0.33em 0;
+
+}
+
+
+/*  >>> Special Component Styles  */
+
+[component-id="title"] .title::after {
+
+	content: "\1f3b2";
+
+	float: right;
+
+}
+
+[is-prequisite-fulfilled]::before {
+
+	--width: 1ex;
+	
+	display: inline-block;
+	
+	width: var(--width);
+	
+	margin-inline-end: calc(var(--width) * 1.1);
+
+}
+
+[is-prequisite-fulfilled="false"]::before { content: "\26a0"; }
+[is-prequisite-fulfilled="true"]::before  { content: "✔"; }

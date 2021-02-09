@@ -106,7 +106,7 @@ function handleCheckboxToggle (event) {
 
 				let prequisiteID = prequisiteElement.getAttribute("prequisite-id");
 				
-				prequisiteElement.setAttribute("is-prequisite-fulfilled", checkPrequisite(prequisiteID));
+				prequisiteElement.setAttribute("is-prequisite-fulfilled", checkIfPrequisiteFulfilled(prequisiteID));
 
 			}
 
@@ -454,7 +454,7 @@ function moveChildComponentToParentElement (component, wrapper) {
 
 };
 
-function checkPrequisite (prequisite) {
+function checkIfPrequisiteFulfilled (prequisite) {
 
 	return Projects.temporary.features.includes(prequisite);
 
@@ -463,7 +463,7 @@ function checkPrequisite (prequisite) {
 function checkIfAllPrequisitesFulfilled (component) {
 
 	return component.prequisites && component.prequisites.length
-				? component.prequisites.every(prequisite => checkPrequisite(prequisite))
+				? component.prequisites.every(prequisite => checkIfPrequisiteFulfilled(prequisite))
 				: true;
 
 };

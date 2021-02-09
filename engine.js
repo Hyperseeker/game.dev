@@ -213,9 +213,11 @@ function renderProjectScreen () {
 
 	CONTAINERS.main.append(html`
 		<div class="effort">
+
 			This game would take
 			<div class="days">${calculateDevelopmentTime()}</div>
 			days to develop
+
 		</div>
 	`);
 

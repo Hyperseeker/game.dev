@@ -148,6 +148,8 @@ main section .component:last-child  { margin-inline-end:   0; }
 
 main section .component:hover {
 
+	background-color: canvas;
+
 	border-color: grey;
 
 	box-shadow: 0 0 12px hsl(0, 0%, 50%, 0.25);

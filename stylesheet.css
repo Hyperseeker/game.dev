@@ -130,6 +130,7 @@ main section h2 {
 
 }
 
+
 /*  >>> Components  */
 
 main section .component {
@@ -162,6 +163,7 @@ main section .component .component {
 	margin: 0.75em -1.5em 0 1.5em;
 
 }
+
 
 /*  >>>> Component Details  */
 
@@ -208,6 +210,7 @@ label { cursor: pointer; }
 }
 
 .component.range .state { margin-inline-start: auto; }
+
 
 /*  >>> TEMP: Derived  */
 

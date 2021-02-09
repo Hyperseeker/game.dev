@@ -231,43 +231,64 @@ function renderComponentsList () {
 
 	// * STAGE I → Render Content
 
-	COMPONENTS.map(component => {
+	let render = {
 
-		let { category, subcategory } = component;
+		category (name) {
 
-		let article, section;
+			return html`
+				<article class="${name}">
 
-		if (!fragment.querySelector(`article.${category}`)) {
+					<h1>${toTitleCase(name)}</h1>
 
-			let article = html`
-				<article class="${category}">
-					<h1>${toTitleCase(category)}</h1>
 				</article>
 			`;
 
-			fragment.append(article);
+		},
 
-		};
+		subcategory (name) {
 
-		article = fragment.querySelector(`article.${category}`);
+			return html`
+				<section class="${name}">
 
-		if (!article.querySelector(`section.${subcategory}`)) {
+					<h2>${toTitleCase(name)}</h2>
 
-			let section = html`
-				<section class="${subcategory}">
-					<h2>${toTitleCase(subcategory)}</h2>
 				</section>
 			`;
 
-			article.append(section);
+		}
+
+	};
+
+	COMPONENTS.map(component => {
+
+		let selector  = {
+
+				category:    `article.${component.category}`,
+				subcategory: `section.${component.subcategory}`
+
+			},
+		
+			container = {
+				
+				category:    fragment.querySelector(selector.category),
+				subcategory: fragment.querySelector(selector.category) 
+								? fragment.querySelector(selector.category).querySelector(selector.subcategory) 
+								: null
 			
-		};
+			},
 
-		section = article.querySelector(`section.${subcategory}`);
+			componentElement = renderComponent(component);
 
-		let componentElement = renderComponent(component);
+		// * ----------------------------------------------------------
 
-		section.append(componentElement);
+		container.category    ??= render.category(component.category);
+		container.subcategory ??= render.subcategory(component.subcategory);
+
+		container.subcategory.append(componentElement);
+
+		container.category.querySelector(selector.subcategory) || container.category.append(container.subcategory);
+
+		fragment.querySelector(selector.category) || fragment.append(container.category);
 
 	});
 

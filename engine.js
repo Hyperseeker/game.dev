@@ -421,7 +421,7 @@ function renderComponentPrequisites (component) {
 				let fulfilled = checkIfPrequisiteFulfilled(prequisite).toString();
 
 				let element = html`
-					<div class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id=${prequisite}>
+					<div class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id="${prequisite}">
 						<b>Feature required</b>: ${getFeature("id", prequisite).name}
 					</div>
 				`

@@ -9,7 +9,7 @@ const CONTAINERS = {
 const DEFAULT_DESCRIPTION = "This here is where the description is supposed to be";
 
 const BASE_COMPLEXITY = 100;
-const BASE_TIME_TO_DEVELOP = 60; // * days, for 100 complexity
+const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/day
 
 const TYPES = [
 	"input",
@@ -217,8 +217,8 @@ function renderProjectScreen () {
 		<div class="effort">
 
 			This game would take
-			<div class="days">${calculateDevelopmentTime()}</div>
-			days to develop
+			<div class="hours">${calculateDevelopmentTime()}</div>
+			hours to develop
 
 		</div>
 	`);
@@ -437,7 +437,7 @@ function renderComponentPrequisites (component) {
 
 function renderComplexityEffort () {
 
-	document.querySelector("main .days").innerText = calculateDevelopmentTime();
+	document.querySelector("main .hours").innerText = calculateDevelopmentTime();
 
 };
 

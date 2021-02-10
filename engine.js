@@ -86,7 +86,7 @@ function handleCheckboxToggle (event) {
 
 		range.disabled = !checkbox.checked;
 		
-		storeRangeValueToProject(id, range.disabled ? null : range.value)
+		storeValueToProject(id, range.disabled ? null : range.value)
 
 	};
 
@@ -127,7 +127,7 @@ function handleRangeChange (event) {
 		id = componentElement.getAttribute("component-id"),
 		value = range.value;
 
-	storeRangeValueToProject(id, value);
+	storeValueToProject(id, value);
 
 	updateRangeDetails(range);
 
@@ -135,7 +135,6 @@ function handleRangeChange (event) {
 
 };
 
-function storeRangeValueToProject (id, value) {
 function handleRadioSwitch (event) {
 
 	let radio = event.target,
@@ -152,6 +151,7 @@ function handleRadioSwitch (event) {
 
 };
 
+function storeValueToProject (id, value) {
 
 	// ? set value to `null` instead?
 	return value === null ? delete Projects.temporary.values[id] : Projects.temporary.values[id] = value ;

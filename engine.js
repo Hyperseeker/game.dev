@@ -136,6 +136,22 @@ function handleRangeChange (event) {
 };
 
 function storeRangeValueToProject (id, value) {
+function handleRadioSwitch (event) {
+
+	let radio = event.target,
+		componentElement = radio.closest(".component");
+
+		id = componentElement.getAttribute("component-id"),
+		value = radio.id.replace(radio.name, "");
+	
+	storeValueToProject(id, value);
+
+	updateRadioDetails(radio);
+
+	renderComplexityEffort();
+
+};
+
 
 	// ? set value to `null` instead?
 	return value === null ? delete Projects.temporary.values[id] : Projects.temporary.values[id] = value ;
@@ -156,6 +172,25 @@ function updateRangeDetails (range) {
 		[ componentElement.querySelector(".state"),           featureValues.name         ],
 		[ componentElement.querySelector(".description"),     featureValues.description  ],
 		[ componentElement.querySelector(".complexity"),  `×${featureValues.complexity}` ]
+
+	];
+
+	for ([element, text] of details) element.innerText = text;
+
+};
+
+function updateRadioDetails (radio) {
+
+	// TODO: merge the two functions a lá `renderComponent()`
+
+	let componentElement = radio.closest(".component"),
+		componentID = componentElement.getAttribute("component-id");
+
+	let featureValues = getFeature("id", componentID).values[radio.id.replace(radio.name, "")];
+
+	let details = [
+
+		[ componentElement.querySelector(".description"),     featureValues.description  ]
 
 	];
 
@@ -401,6 +436,37 @@ function renderComponent (component) {
 					${renderComponentPrequisites(component)}
 				`
 
+			},
+
+			radio (component) {
+
+				return html`
+					<fieldset>
+
+						<legend>${component.name}</legend>
+
+						${component.values.map((value, index) => {
+
+							let checked = index ? "" : "checked",
+								unique  = `${component.id}${index}`;
+							
+							return html`
+								<div class="option">
+									<input type="radio" name="${component.id}" id="${unique}" ${checked}>
+									<label for="${unique}">
+										${value.name}
+										<span class="complexity">×${value.complexity.toFixed(2)}</span>
+									</label>
+								</div>
+							`
+						
+						})}
+
+					</fieldset>
+
+					${renderComponentDescription(component)}
+				`
+
 			}
 		
 		};
@@ -514,5 +580,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	Gator(document).on("change", ".component [type='checkbox']", handleCheckboxToggle);
 	Gator(document).on("input",  ".component [type='range']",    handleRangeChange);
+	Gator(document).on("input",  ".component [type='radio']",    handleRadioSwitch);
 
 });

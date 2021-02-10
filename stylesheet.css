@@ -213,6 +213,13 @@ label { cursor: pointer; }
 
 .component.range .state { margin-inline-start: auto; }
 
+.component.radio fieldset {
+
+	display: flex;
+	justify-content: space-between;
+	
+}
+
 
 /*  >>> TEMP: Derived  */
 

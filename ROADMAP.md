@@ -1,10 +1,10 @@
 # Alpha Release
 
-- [ ] features render and display correctly
+- [x] features render and display correctly
   - [x] `toggle` / checkbox
   - [x] `range`
   - [x] `input` / text field
-  - [ ] `radio` / choice of one
+  - [x] `radio` / choice of one
 - [ ] Player is able to create new games from a set of features
   - [x] features may require prequisite features
     - [x] if prequisite feature is removed from project, features that depend on it do not count toward effort calculations and will not be part of the game

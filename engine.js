@@ -134,7 +134,7 @@ function handleRangeChange (event) {
 
 	storeValueToProject(id, value);
 
-	updateRangeDetails(range);
+	updateComponentDetails(range);
 
 	renderComplexityEffort();
 
@@ -150,7 +150,7 @@ function handleRadioSwitch (event) {
 	
 	storeValueToProject(id, value);
 
-	updateRadioDetails(radio);
+	updateComponentDetails(radio);
 
 	renderComplexityEffort();
 
@@ -163,41 +163,49 @@ function storeValueToProject (id, value) {
 
 };
 
-function updateRangeDetails (range) {
+function updateComponentDetails (subelement) {
 
 	// TODO: implement with generated CSS and adjacency selectors
 
-	let componentElement = range.closest(".component"),
-		componentID = componentElement.getAttribute("component-id");
+	let componentElement = subelement.closest(".component"),
+		componentID = componentElement.getAttribute("component-id"),
 
-	let featureValues = getFeature("id", componentID).values[range.value];
+		type = subelement.type;
 
-	let details = [
+	let featureValues,
+		details;
 
-		[ componentElement.querySelector(".state"),           featureValues.name         ],
-		[ componentElement.querySelector(".description"),     featureValues.description  ],
-		[ componentElement.querySelector(".complexity"),  `×${featureValues.complexity}` ]
+	let handler = {
 
-	];
+		range () {
 
-	for ([element, text] of details) element.innerText = text;
+			featureValues = getFeature("id", componentID).values[subelement.value];
 
-};
+			details = [
 
-function updateRadioDetails (radio) {
+				[ componentElement.querySelector(".state"),           featureValues.name         ],
+				[ componentElement.querySelector(".description"),     featureValues.description  ],
+				[ componentElement.querySelector(".complexity"),  `×${featureValues.complexity}` ]
 
-	// TODO: merge the two functions a lá `renderComponent()`
+			];
 
-	let componentElement = radio.closest(".component"),
-		componentID = componentElement.getAttribute("component-id");
+		},
 
-	let featureValues = getFeature("id", componentID).values[radio.id.replace(radio.name, "")];
+		radio () {
 
-	let details = [
+			featureValues = getFeature("id", componentID).values[subelement.id.replace(subelement.name, "")];
 
-		[ componentElement.querySelector(".description"),     featureValues.description  ]
+			details = [
 
-	];
+				[ componentElement.querySelector(".description"),     featureValues.description  ]
+
+			];
+
+		}
+
+	};
+
+	handler[type]();
 
 	for ([element, text] of details) element.innerText = text;
 

@@ -209,7 +209,7 @@ function updateComponentDetails (subelement) {
 
 	for ([element, text] of details) element.innerText = text;
 
-}
+};
 
 
 // > CALCULATIONS

@@ -1,0 +1,699 @@
+/*! browser-reset.css | MIT License | brikcss  <https://github.com/brikcss> | Credit to @necolas for normalize.css, which many of these styles were based on. */
+
+/** Variables.
+    ============================================================================================= */
+
+	:root {
+		/* Rhythm grid. */
+		--base-rhythm: 8px;
+	
+		/* Font properties. */
+		--base-font__size: 16px;
+		--base-font__size--heading: 1.2em;
+	
+		/* Line height. */
+		--base-line-height: 3rem;
+	
+		/* Vertical spacing. */
+		--base-spacing: 2rem;
+		--base-spacing--headings: 4rem;
+		--base-spacing--h1: 0;
+	
+		/* Default border and outline styles. */
+		--base-border: 1px solid hsl(0, 0%, 80%);
+		--base-outline__width: 2px;
+	
+		/* Tab size in `pre` elements. */
+		--base-tab-size: 4;
+	
+		/* Indentation. */
+		--base-indent: 3rem;
+		--base-indent--list: 5rem;
+	
+		/* Buttons. */
+		--base-button__bg: hsl(0, 0%, 90%);
+		--base-button__padding: 0 0.5rem;
+		--base-button__height: 4rem;
+		--base-button__border: 1px solid hsla(0, 0%, 0%, 0.1);
+	
+		/* Tables. */
+		--base-table__border: var(--base-border);
+		--base-table__cell-padding: 0.5rem 1rem;
+		--base-table__even-cells-bg: hsla(0, 0%, 0%, 0.05);
+	
+		/* Forms, fieldsets, and legends. */
+		--base-fieldset__padding: 2rem;
+		--base-legend__padding: 1rem;
+	
+		/* Form inputs. */
+		--base-input__height: 4rem;
+		--base-input__width: 100%;
+		--base-input__bg: hsl(0, 0%, 100%);
+		--base-input__padding: 1rem;
+		--base-input__placeholder-color: hsl(0, 0%, 60%);
+		--base-input__placeholder-color--firefox: hsl(0, 0%, 0%);
+	
+		/* Range inputs. */
+		--base-range__shadow: 0 0.125rem 0.3rem hsla(0, 0%, 0%, 0.4) inset;
+		--base-range__bg: hsl(0, 0%, 90%);
+		--base-range__bg--focused: hsl(0, 0%, 80%);
+		--base-range__thumb-bg: hsl(0, 0%, 90%);
+		--base-range__thumb-shadow: 0 0.125rem 0.125rem hsla(0, 0%, 0%, 0.3);
+		--base-range__height: 0.8rem;
+		--base-range__border: 1px solid hsl(0, 0%, 60%);
+		--base-range__webkit-margin-top: -0.6rem;
+	
+		/* Progress elements. */
+		--base-progress__height: 1rem;
+		--base-progress__width: var(--base-input__width);
+		--base-progress__bg: hsl(0, 0%, 90%);
+		--base-progress__value-bg: hsl(206, 99%, 31%);
+	}
+	
+	/** Browser inconsistencies and fixes.
+		============================================================================================= */
+	
+	html {
+		/* Set default `rem` value. */
+		font-size: var(--base-rhythm);
+	
+		/* Prevent adjustments of font size after orientation changes in iOS. */
+		-webkit-text-size-adjust: 100%;
+	
+		/* Reset box sizing (see https://css-tricks.com/box-sizing/). */
+		box-sizing: border-box;
+	}
+	
+	body {
+		/* Reset `font-size` to a default value. */
+		font-size: var(--base-font__size);
+	
+		/*
+		 * Set default `line-height` in rems in order to:
+		 *	1. create and easily manage a vertical/horizontal rhythm grid.
+		 *	2. force browsers to render line heights the same way (prevent pixel fractions).
+		 */
+		line-height: var(--base-line-height);
+	}
+	
+	*,
+	*:before,
+	*:after {
+		/* Universal `box-sizing` with inheritance (see https://css-tricks.com/box-sizing/). */
+		/* box-sizing: inherit; */
+	}
+	
+	*:focus {
+		/* Reset outline on any focused element. */
+		outline: var(--base-outline__width) auto hsl(208, 59%, 60%);
+	}
+	
+	html,
+	body,
+	div,
+	span,
+	object,
+	iframe,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	blockquote,
+	pre,
+	abbr,
+	code,
+	em,
+	img,
+	figure,
+	small,
+	strong,
+	sub,
+	sup,
+	li,
+	dl,
+	fieldset,
+	form,
+	label,
+	legend,
+	input,
+	table,
+	tbody,
+	tfoot,
+	thead,
+	tr,
+	th,
+	td,
+	article,
+	aside,
+	footer,
+	header,
+	nav,
+	section,
+	time,
+	audio,
+	video {
+		/* Reset `margin` and `padding` to zero. */
+		margin: 0;
+		padding: 0;
+	}
+	ul,
+	ol {
+		/* Reset `margin` to zero. */
+		margin: 0;
+	
+		/* Reset left padding. */
+		padding-left: var(--base-indent--list);
+	}
+	h1 {
+		/* Sensible spacing defaults for h1 headings. */
+		margin-top: var(--base-spacing--h1);
+	}
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		/* Sensible spacing defaults for headings. */
+		margin-top: var(--base-spacing--headings);
+	}
+	p,
+	ul,
+	ol,
+	dl,
+	table,
+	figure,
+	form,
+	fieldset {
+		/* Sensible spacing defaults for block level elements. */
+		margin-top: var(--base-spacing);
+	}
+	ul ul,
+	ul ol,
+	ol ol,
+	ol ul {
+		/* Reset spacing for nested lists. */
+		margin-top: 0;
+	}
+	
+	dt {
+		/* Italicize definition list titles. */
+		font-style: italic;
+	}
+	
+	dd {
+		/* Reset indentation to be even with list items. */
+		margin-left: 0;
+		padding-left: var(--base-indent);
+	}
+	
+	/** Block level semantics.
+		============================================================================================= */
+	
+	blockquote {
+		/* Sensible defaults. */
+		border-left: 0.5rem solid hsla(0, 0%, 0%, 0.2);
+		font-style: italic;
+		margin-left: var(--base-indent);
+		padding-left: 1.5rem;
+	}
+	
+	hr {
+		/* Reset to zero height. */
+		height: 0;
+	
+		/* Show the overflow in Edge and IE. */
+		overflow: visible;
+	
+		/* Reset border. */
+		border: 0;
+		border-bottom: var(--base-border);
+		border-top: var(--base-border);
+	}
+	
+	pre {
+		/* Correct inheritance and scaling of `font-size`. */
+		/* stylelint-disable-next-line font-family-no-duplicate-names */
+		font-family: monospace, monospace;
+	
+		/* Correct odd `em` font sizing. */
+		font-size: 1em;
+	
+		/* Reset `tab-size`. */
+		tab-size: var(--base-tab-size);
+	}
+	
+	/** Text level semantics.
+		============================================================================================= */
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		/* Reset heading `font-size`. */
+		font-size: var(--base-font__size--heading);
+	}
+	
+	a {
+		/* Remove gray background on active links in IE10. */
+		background-color: transparent;
+	}
+	
+	abbr[title] {
+		/* Remove `border-bottom` in Chrome 57-. */
+		border-bottom: none;
+	
+		/* Reset `text-decoration` in Chrome, Edge, IE, Opera, and Safari. */
+		text-decoration: underline;
+		text-decoration: underline dotted;
+	}
+	
+	b,
+	strong {
+		/* Reset `font-weight` in Chrome, Edge, and Safari. */
+		font-weight: bolder;
+	}
+	
+	code,
+	kbd,
+	samp {
+		/* Reset inheritance and scaling of `font-size`. */
+		/* stylelint-disable-next-line font-family-no-duplicate-names */
+		font-family: monospace, monospace;
+	
+		/* Correct the odd `em` font sizing. */
+		font-size: 1em;
+	}
+	
+	small {
+		/* Reset `font-size`. */
+		font-size: 80%;
+	}
+	
+	sub,
+	sup {
+		/* Prevent `sub` and `sup` from affecting `line-height`. */
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+	
+	sub {
+		/* Position `sub`. */
+		bottom: -0.25em;
+	}
+	
+	sup {
+		/* Position `sup`. */
+		top: -0.5em;
+	}
+	
+	/** Media elements.
+		============================================================================================= */
+	
+	img,
+	object {
+		/* Set `max-width` on media elements. */
+		max-width: 100%;
+	}
+	img {
+		/* Remove border on images inside links in IE10. */
+		border-style: none;
+	}
+	
+	/** Forms
+		============================================================================================= */
+	
+	::-webkit-input-placeholder {
+		/* Reset placeholder text color for Chrome and Safari. */
+		color: var(--base-input__placeholder-color);
+	}
+	::-moz-placeholder {
+		/* Reset placeholder text color for Firefox. */
+		color: var(--base-input__placeholder-color--firefox);
+	}
+	::-ms-input-placeholder {
+		/* Reset placeholder text color for IE and Edge. */
+		color: var(--base-input__placeholder-color);
+	}
+	
+	textarea,
+	select,
+	[type='date'],
+	[type='datetime'],
+	[type='datetime-local'],
+	[type='email'],
+	[type='month'],
+	[type='number'],
+	[type='password'],
+	[type='search'],
+	[type='tel'],
+	[type='text'],
+	[type='time'],
+	[type='url'],
+	[type='week'] {
+		/* Sensible defaults for field inputs. */
+		background-clip: padding-box;
+		border-radius: 0;
+		appearance: none;
+		background-color: var(--base-input__bg);
+		border: var(--base-border);
+		padding: 0 var(--base-input__padding);
+		text-align: left;
+		height: var(--base-input__height);
+		vertical-align: middle;
+		width: var(--base-input__width);
+	}
+	
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		/* Reset font styles. */
+		font-family: inherit;
+		font-size: 100%;
+		line-height: 1em;
+	}
+	
+	button,
+	input {
+		/* Show the overflow in Edge. */
+		overflow: visible;
+	}
+	
+	button,
+	select {
+		/* Remove the inheritance of text transform in Firefox. */
+		text-transform: none;
+	}
+	
+	fieldset {
+		/* Reset the padding in Firefox. */
+		padding: var(--base-fieldset__padding);
+	
+		/* Reset border. */
+		border: var(--base-border);
+	}
+	
+	legend {
+		/* Reset text wrapping in Edge and IE. */
+		box-sizing: border-box;
+		display: table;
+		max-width: 100%;
+		white-space: normal;
+	
+		/* Correct color inheritance from `fieldset` elements in IE. */
+		color: inherit;
+	
+		/* Set sensible padding default. */
+		padding-left: var(--base-legend__padding);
+		padding-right: var(--base-legend__padding);
+	}
+	
+	progress {
+		/* Reset default appearance. */
+		appearance: none;
+	
+		/* Reset dimensions. */
+		height: var(--base-progress__height);
+		width: var(--base-progress__width);
+	
+		/* Reset border in Firefox. */
+		border: none;
+	
+		/* Correct vertical alignment in Chrome, Firefox, and Opera. */
+		vertical-align: baseline;
+	
+		/* Reset background color. */
+		background-color: var(--base-progress__bg);
+		border-radius: 0;
+	
+		/* Reset color for IE10. */
+		color: var(--base-progress__value-bg);
+	}
+	progress::-webkit-progress-bar {
+		background-color: var(--base-progress__bg);
+	}
+	progress::-webkit-progress-value {
+		background-color: var(--base-progress__value-bg);
+	}
+	progress::-moz-progress-bar {
+		background-color: var(--base-progress__value-bg);
+	}
+	
+	select {
+		/* Sensible defaults for select fields. */
+		appearance: none;
+		background: #fff
+			url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+		background-repeat: no-repeat;
+		background-position: 99% center;
+	}
+	
+	textarea {
+		/* Remove the default vertical scrollbar in IE 10+. */
+		overflow: auto;
+	
+		/* Sensible defaults for textarea fields. */
+		display: block;
+		height: auto;
+		min-height: calc(2 * var(--base-input__height));
+		padding: var(--base-input__padding);
+	}
+	
+	[type='number']::-webkit-inner-spin-button,
+	[type='number']::-webkit-outer-spin-button {
+		/* Correct cursor style of increment and decrement buttons in Chrome. */
+		height: auto;
+	}
+	
+	[type='search'] {
+		/* Correct odd appearance in Chrome and Safari. */
+		appearance: textfield;
+	
+		/* Correct outline style in Safari. */
+		outline-offset: -2px;
+	}
+	
+	[type='search']::-webkit-search-decoration {
+		/* Remove inner padding in Chrome and Safari on macOS. */
+		appearance: none;
+	}
+	
+	[type='color'],
+	[type='range'] {
+		/* Set height to same as input fields. */
+		height: var(--base-input__height);
+	
+		/* Reset vertical alignement. */
+		vertical-align: bottom;
+	}
+	
+	[type='range'] {
+		/* Reset default browser styles. */
+		appearance: none;
+		background: transparent;
+		cursor: pointer;
+	
+		/* Make full width. */
+		width: var(--base-input__width);
+	}
+	[type='range']::-webkit-slider-thumb {
+		/* Reset default browser styles. */
+		appearance: none;
+	}
+	[type='range']::-ms-track {
+		/* Make full width. */
+		width: var(--base-input__width);
+	
+		/* Reset default browser styles. */
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	::-webkit-slider-thumb {
+		/* Sensible defaults for Chrome/Safari range thumb. */
+		appearance: none;
+		border: var(--base-range__border);
+		height: calc(var(--base-range__height) * 2.5);
+		width: calc(var(--base-range__height) * 2.5);
+		border-radius: 50%;
+		box-shadow: var(--base-range__thumb-shadow);
+		background: var(--base-range__thumb-bg);
+		margin-top: var(--base-range__webkit-margin-top);
+	}
+	::-moz-range-thumb {
+		/* Sensible defaults for Firefox range thumb. */
+		border: var(--base-range__border);
+		height: calc(var(--base-range__height) * 2.5);
+		width: calc(var(--base-range__height) * 2.5);
+		border-radius: 50%;
+		box-shadow: var(--base-range__thumb-shadow);
+		background: var(--base-range__thumb-bg);
+	}
+	::-ms-thumb {
+		/* Sensible defaults for IE/Edge range thumb. */
+		border: var(--base-range__border);
+		height: calc(var(--base-range__height) * 2.5);
+		width: calc(var(--base-range__height) * 2.5);
+		border-radius: 50%;
+		box-shadow: var(--base-range__thumb-shadow);
+		background: var(--base-range__thumb-bg);
+	}
+	::-webkit-slider-runnable-track {
+		/* Sensible defaults for Chrome/Safari track. */
+		height: var(--base-range__height);
+		box-shadow: var(--base-range__shadow);
+		background: var(--base-range__bg);
+		border-radius: 0;
+	}
+	[type='range']:focus::-webkit-slider-runnable-track {
+		/* Sensible defaults for Chrome/Safari focused track. */
+		background: var(--base-range__bg--focused);
+	}
+	::-moz-range-track {
+		/* Sensible defaults for Firefox track. */
+		height: var(--base-range__height);
+		box-shadow: var(--base-range__shadow);
+		background: var(--base-range__bg);
+		border-radius: 0;
+	}
+	::-ms-track {
+		/* Sensible defaults for IE/Edge track. */
+		height: var(--base-range__height);
+		box-shadow: var(--base-range__shadow);
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	[type='range']::-ms-fill-lower {
+		/* Sensible defaults for IE/Edge track. */
+		background: var(--base-range__bg);
+		border-radius: 0;
+	}
+	[type='range']::-ms-fill-upper {
+		/* Sensible defaults for IE/Edge track. */
+		background: var(--base-range__bg);
+		border-radius: 0;
+	}
+	[type='range']:focus::-ms-fill-lower {
+		/* Sensible defaults for IE/Edge focused track. */
+		background: var(--base-range__bg--focused);
+	}
+	[type='range']:focus::-ms-fill-upper {
+		/* Sensible defaults for IE/Edge focused track. */
+		background: var(--base-range__bg--focused);
+	}
+	
+	/** Buttons.
+		============================================================================================= */
+	
+	button,
+	[role='button'],
+	[type='button'],
+	[type='reset'],
+	[type='submit'] {
+		/* Correct the inability to style clickable types in iOS and Safari. */
+		appearance: button;
+	
+		/* Sensible defaults. */
+		display: inline-block;
+		background-color: var(--base-button__bg);
+		border-radius: 0;
+		border: var(--base-button__border);
+		padding: var(--base-button__padding);
+		height: var(--base-button__height);
+	}
+	button::-moz-focus-inner,
+	[type='button']::-moz-focus-inner,
+	[type='reset']::-moz-focus-inner,
+	[type='submit']::-moz-focus-inner {
+		/* Reset inner border in Firefox. */
+		border-style: none;
+	}
+	
+	[type='file'] {
+		/* Firefox doesn't allow styling of file upload button, but explicitly setting height here
+		resets its style in Firefox. Also sets a sensible height for all browsers. */
+		height: var(--base-button__height);
+	}
+	::-webkit-file-upload-button {
+		/* Correct the inability to style clickable types in iOS and Safari. */
+		appearance: button;
+	
+		/* Change font properties to `inherit` in Safari. */
+		font: inherit;
+	
+		/* Sensible defaults. */
+		background-color: var(--base-button__bg);
+		border-radius: 0;
+		border: var(--base-button__border);
+		padding: var(--base-button__padding);
+		height: var(--base-button__height);
+	}
+	
+	/** Tables
+		============================================================================================= */
+	
+	table {
+		/* Sensible defaults for the table element. */
+		border-collapse: collapse;
+		border-spacing: 0;
+		border: var(--base-table__border);
+	}
+	
+	th,
+	td {
+		/* Sensible defaults for table headers and cells. */
+		border-bottom: var(--base-table__border);
+		padding: var(--base-table__cell-padding);
+		text-align: left;
+	}
+	
+	th {
+		/* Sensible defaults table headers. */
+		border-top: var(--base-table__border);
+		font-weight: bold;
+		vertical-align: bottom;
+	}
+	
+	td {
+		/* Sensible defaults for table cells. */
+		font-weight: normal;
+		vertical-align: top;
+	}
+	
+	tr:nth-child(even) {
+		/* Sensible defaults to shade every other data row. */
+		background-color: var(--base-table__even-cells-bg);
+	}
+	
+	/** Other elements.
+		============================================================================================= */
+	
+	details {
+		/* Correct display in Edge, IE 10+, and Firefox. */
+		display: block;
+	}
+	
+	summary {
+		/* Correct display in all browsers. */
+		display: list-item;
+	}
+	
+	template {
+		/* Correct display in IE 10+. */
+		display: none;
+	}
+	
+	[hidden] {
+		/* Correct display in IE 10. */
+		display: none;
+	}
+	

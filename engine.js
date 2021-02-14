@@ -332,13 +332,16 @@ function renderComponentsList () {
 
 		// * ----------------------------------------------------------
 
+		// * if containers don't exist, create them
 		container.category    ??= render.category(component.category);
 		container.subcategory ??= render.subcategory(component.subcategory);
 
 		container.subcategory.append(componentElement);
 
+		// * only append `container.subcategory` if it isn't already part of `container.category`
 		container.category.querySelector(selector.subcategory) || container.category.append(container.subcategory);
 
+		// * only append `container.category` if it isn't already part of `fragment`
 		fragment.querySelector(selector.category) || fragment.append(container.category);
 
 	});

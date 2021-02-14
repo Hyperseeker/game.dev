@@ -242,6 +242,14 @@ label {
 
 }
 
+.prequisites {
+
+	padding-inline-start: 0;
+
+	list-style: none;
+
+}
+
 [is-prequisite-fulfilled]::before {
 
 	--width: 1ex;

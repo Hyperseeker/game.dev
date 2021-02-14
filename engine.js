@@ -541,19 +541,19 @@ function renderComponentPrequisites (component) {
 	if (!component.prequisites || !component.prequisites.length) return "";
 
 	return html`
-		<div class="prequisites">
+		<ul class="prequisites">
 			${component.prequisites.map(prequisite => {
 
 				let fulfilled = checkIfPrequisiteFulfilled(prequisite).toString();
 
 				return html`
-					<div class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id="${prequisite}">
+					<li class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id="${prequisite}">
 						<b>Feature required</b>: ${getFeature("id", prequisite).name}
-					</div>
+					</li>
 				`
 
 			})}
-		</div>`;
+		</ul>`;
 
 };
 

@@ -216,7 +216,7 @@ function calculateProjectComplexity () {
 		// * i.e. if `feature` is not on the list of components the prequisites for which are not fulfilled → are not workable
 		if (!feature) return base_complexity_parsed;
 
-		let handlers = {
+		let handler = {
 
 			toggle () { return feature.complexity },
 
@@ -224,7 +224,7 @@ function calculateProjectComplexity () {
 
 		};
 
-		return handlers[feature.type]();
+		return handler[feature.type]();
 
 
 	}).reduce((accumulator, complexity) => accumulator *= complexity);

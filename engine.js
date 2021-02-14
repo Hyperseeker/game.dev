@@ -440,8 +440,9 @@ function renderComponent (component) {
 			},
 
 			input (component) {
-
-				let placeholder = `placeholder="${component.placeholder || ""}"`;
+				
+				// * futureproofing: this ↓ does not need wrapping quotation marks around the argument
+				let placeholder = `placeholder=${component.placeholder || ""}`;
 
 				return html`
 					<div class="title">

@@ -158,6 +158,7 @@
 		"short": "grph",
 		"name": "Graphics",
 		"type": "radio",
+		"default": true,
 		"category": "engine",
 		"subcategory": "features",
 		"skills": {

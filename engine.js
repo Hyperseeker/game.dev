@@ -210,6 +210,22 @@ function updateComponentDetails (subelement) {
 
 	for ([element, text] of details) element.innerText = text;
 
+	// * miscellaneous value updates
+
+	let postfactum = {
+
+		range () {
+
+			// * set DOM element's `value` attribute to its effective JS `value`
+			// * useful for handling views via constructed CSS
+			return subelement.setAttribute("value", subelement.value)
+
+		}
+
+	};
+
+	if (type in postfactum) postfactum[type]();
+
 };
 
 

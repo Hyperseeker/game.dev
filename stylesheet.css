@@ -217,6 +217,9 @@ label { cursor: pointer; }
 
 	display: flex;
 	justify-content: space-between;
+
+	/* TODO: use comprehensive reset to get rid of browser-default margins */
+	margin: 0;
 	
 }
 

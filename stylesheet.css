@@ -169,6 +169,8 @@ main section .component .component {
 
 /*  >>>> Component Details  */
 
+input + label { padding-inline-start: 0.5ex; }
+
 [type="checkbox"] { margin: 0; }
 
 [type="text"] {
@@ -188,8 +190,6 @@ label { cursor: pointer; }
 [type="range"] { cursor: e-resize; }
 
 [disabled] { cursor: not-allowed; }
-
-.component [type="checkbox"] + label { margin-inline-start: 0.33em; }
 
 .component label,
 .component.input .title { font-weight: bold; }

@@ -55,9 +55,14 @@ let Projects = {
 
 		Projects.temporary = new Project();
 
-		let defaultFeatures = COMPONENTS.filter(component => component.default).map(component => component.id);
+		let defaultFeatures = COMPONENTS.filter(component => component.default),
+			defaultIDs = defaultFeatures.map(component => component.id);
 
-		Projects.temporary.features = defaultFeatures;
+		Projects.temporary.features = defaultIDs;
+
+		Projects.temporary.values = Object.fromEntries(
+			defaultFeatures.filter(feature => feature.values).map(feature => [feature.id, 0])
+		);
 
 		renderProjectScreen();
 		

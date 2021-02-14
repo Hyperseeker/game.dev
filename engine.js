@@ -220,7 +220,9 @@ function calculateProjectComplexity () {
 
 			toggle () { return feature.complexity },
 
-			range  () { return feature.values ? feature.values[Projects.temporary.values[id]].complexity : feature.complexity }
+			range  () { return feature.values ? feature.values[Projects.temporary.values[id]].complexity : feature.complexity },
+
+			radio  () { return feature.values ? feature.values[Projects.temporary.values[id]].complexity : feature.complexity }
 
 		};
 

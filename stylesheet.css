@@ -22,8 +22,6 @@ body {
 
 	min-height: 100vh;
 
-	margin: 0;
-
 	font-family: sans-serif;
 	line-height: 1.33;
 	
@@ -85,13 +83,6 @@ main {
 	max-width: 75ch;
 
 	padding: 5%;
-
-}
-
-main h1,
-main h2 {
-
-	margin: 0;
 
 }
 
@@ -224,9 +215,6 @@ label {
 
 	display: flex;
 	justify-content: space-around;
-
-	/* TODO: use comprehensive reset to get rid of browser-default margins */
-	margin: 0;
 	
 }
 

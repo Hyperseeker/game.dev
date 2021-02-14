@@ -192,6 +192,8 @@ label {
 .component label,
 .component.input .title { font-weight: bold; }
 
+.component.toggle > .title ~ * { margin-inline-start: 2ex; }
+
 .component.range .title {
 
 	display: flex;

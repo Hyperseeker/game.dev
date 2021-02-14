@@ -505,6 +505,7 @@ function renderComponent (component) {
 function renderComponentDescription (component) {
 
 	let description = component.description && component.description.length
+						// * ↓ render description consistently whether it's an array or a single string
 						? [component.description].flat().map(line => html`<p>${line}</p>`)
 						: component.values
 							? component.values[0].description

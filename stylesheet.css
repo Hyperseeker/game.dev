@@ -164,17 +164,6 @@ input + label { padding-inline-start: 0.5ex; }
 
 [type="checkbox"] { margin: 0; }
 
-[type="text"] {
-
-	width: 100%;
-
-	margin: 0.25em 0;
-	padding: 0.25em;
-
-	box-sizing: border-box;
-
-}
-
 [type="checkbox"],
 [type="radio"],
 label {

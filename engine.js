@@ -441,7 +441,7 @@ function renderComponent (component) {
 
 			input (component) {
 
-				let placeholder = `placeholder=${component.placeholder || ""}`;
+				let placeholder = `placeholder="${component.placeholder || ""}"`;
 
 				return html`
 					<div class="title">

@@ -375,7 +375,7 @@ function renderComponent (component) {
 		let checked  = component.default ? "checked" : "";
 		let disabled = component.default ? "" : "disabled";
 
-		let types = {
+		let type = {
 			
 			toggle (component) {
 
@@ -490,7 +490,7 @@ function renderComponent (component) {
 		
 		};
 
-		return types[component.type](component);
+		return type[component.type](component);
 
 	};
 

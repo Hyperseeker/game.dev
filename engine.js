@@ -350,7 +350,7 @@ function renderComponentsList () {
 	
 	COMPONENTS.filter(component => component.parent).map(component => moveChildComponentToParentElement(component, fragment));
 
-	// * STAGE III → Add Default Features to Features List & Disable Features that Have Unfulfilled Prequisites
+	// * STAGE III → Disable Features that Have Unfulfilled Prequisites
 
 	let checkboxes = [...fragment.querySelectorAll("[type='checkbox']")];
 

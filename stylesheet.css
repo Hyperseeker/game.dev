@@ -223,7 +223,7 @@ label {
 .component.radio fieldset {
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 
 	/* TODO: use comprehensive reset to get rid of browser-default margins */
 	margin: 0;

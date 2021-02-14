@@ -14,7 +14,8 @@ const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/
 const TYPES = [
 	"input",
 	"toggle",
-	"range"
+	"range",
+	"radio"
 ];
 
 

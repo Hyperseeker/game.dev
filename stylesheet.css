@@ -135,7 +135,7 @@ main section h2 {
 
 main section .component {
 
-	flex-grow: 1;
+	width: 100%;
 
 	border: 1px solid transparent;
 

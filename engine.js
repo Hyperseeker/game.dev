@@ -171,7 +171,7 @@ function updateComponentDetails (subelement) {
 	let componentElement = subelement.closest(".component"),
 		componentID = componentElement.getAttribute("component-id"),
 
-		type = subelement.type;
+		type = subelement.getAttribute("type");
 
 	let featureValues,
 		details;

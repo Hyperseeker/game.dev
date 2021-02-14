@@ -185,7 +185,14 @@ input + label { padding-inline-start: 0.5ex; }
 }
 
 [type="checkbox"],
-label { cursor: pointer; }
+[type="radio"],
+label {
+	
+	vertical-align: middle;
+
+	cursor: pointer;
+
+}
 
 [type="range"] { cursor: e-resize; }
 

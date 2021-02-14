@@ -250,7 +250,7 @@ label {
 	
 	width: var(--width);
 	
-	margin-inline-end: calc(var(--width) * 1.1);
+	margin-inline-end: calc(var(--width) * 1.2);
 
 }
 

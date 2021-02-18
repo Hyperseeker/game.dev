@@ -53,9 +53,9 @@ let Projects = {
 
 	temporary: null,
 
-	current: [],
+	current:   [],
 
-	finished: [],
+	finished:  [],
 
 	abandoned: [],
 

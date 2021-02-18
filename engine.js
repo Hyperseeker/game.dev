@@ -134,11 +134,11 @@ function handleCheckboxToggle (event) {
 
 function handleRangeChange (event) {
 
-	let range = event.target,
+	let range            = event.target,
 		componentElement = range.closest(SELECTORS.component),
 
-		id = componentElement.getAttribute("component-id"),
-		value = range.value;
+		id               = componentElement.getAttribute("component-id"),
+		value            = range.value;
 
 	storeValueToProject(id, value);
 
@@ -150,11 +150,11 @@ function handleRangeChange (event) {
 
 function handleRadioSwitch (event) {
 
-	let radio = event.target,
+	let radio            = event.target,
 		componentElement = radio.closest(SELECTORS.component);
 
-		id = componentElement.getAttribute("component-id"),
-		value = radio.id.replace(radio.name, "");
+		id               = componentElement.getAttribute("component-id"),
+		value            = radio.id.replace(radio.name, "");
 	
 	storeValueToProject(id, value);
 

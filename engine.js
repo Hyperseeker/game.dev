@@ -6,6 +6,16 @@ const CONTAINERS = {
 
 };
 
+const SELECTORS = {
+
+	component: ".component",
+
+	toggle:    "[type='checkbox']",
+	range:     "[type='range']",
+	radio:     "[type='radio']"
+	
+};
+
 const DEFAULT_DESCRIPTION = "This here is where the description is supposed to be";
 
 const BASE_COMPLEXITY      = 100; // * on the 1000 scale
@@ -73,7 +83,7 @@ let Projects = {
 function handleCheckboxToggle (event) {
 
 	let checkbox         = event.target,
-		componentElement = checkbox.closest(".component"),
+		componentElement = checkbox.closest(SELECTORS.component),
 
 		id               = checkbox.id,
 		type             = componentElement.className.match(TYPES.join("|"), "gi")[0],
@@ -84,7 +94,7 @@ function handleCheckboxToggle (event) {
 
 	if (type === "range") {
 
-		let range = componentElement.querySelector("[type='range']");
+		let range = componentElement.querySelector(SELECTORS.range);
 
 		range.disabled = !checkbox.checked;
 		
@@ -95,7 +105,7 @@ function handleCheckboxToggle (event) {
 	COMPONENTS.filter(component => component.prequisites && component.prequisites.includes(id)).map(component => {
 
 		let componentElement = document.querySelector(`[component-id="${component.id}"]`),
-			toggle           = componentElement.querySelector(`[type="checkbox"]`);
+			toggle           = componentElement.querySelector(SELECTORS.toggle);
 		
 		toggle.disabled = !checkIfAllPrequisitesFulfilled(component);
 
@@ -124,7 +134,7 @@ function handleCheckboxToggle (event) {
 function handleRangeChange (event) {
 
 	let range = event.target,
-		componentElement = range.closest(".component"),
+		componentElement = range.closest(SELECTORS.component),
 
 		id = componentElement.getAttribute("component-id"),
 		value = range.value;
@@ -140,7 +150,7 @@ function handleRangeChange (event) {
 function handleRadioSwitch (event) {
 
 	let radio = event.target,
-		componentElement = radio.closest(".component");
+		componentElement = radio.closest(SELECTORS.component);
 
 		id = componentElement.getAttribute("component-id"),
 		value = radio.id.replace(radio.name, "");
@@ -164,7 +174,7 @@ function updateComponentDetails (subelement) {
 
 	// TODO: implement with generated CSS and adjacency selectors
 
-	let componentElement = subelement.closest(".component"),
+	let componentElement = subelement.closest(SELECTORS.component),
 		componentID = componentElement.getAttribute("component-id"),
 
 		type = subelement.getAttribute("type");
@@ -364,7 +374,7 @@ function renderComponentsList () {
 
 	// * STAGE III → Disable Features that Have Unfulfilled Prequisites
 
-	let checkboxes = [...fragment.querySelectorAll("[type='checkbox']")];
+	let checkboxes = [...fragment.querySelectorAll(SELECTORS.toggle)];
 
 	checkboxes.map(checkbox => {
 
@@ -629,8 +639,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	Projects.new();
 
-	Gator(document).on("change", ".component [type='checkbox']", handleCheckboxToggle);
-	Gator(document).on("input",  ".component [type='range']",    handleRangeChange);
-	Gator(document).on("input",  ".component [type='radio']",    handleRadioSwitch);
+	Gator(document).on("change", `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
+	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.range}`,  handleRangeChange);
+	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
 
 });

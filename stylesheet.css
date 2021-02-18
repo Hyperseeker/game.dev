@@ -262,5 +262,5 @@ label {
 
 }
 
-[is-prequisite-fulfilled="false"]::before { content: "\26a0"; }
-[is-prequisite-fulfilled="true"]::before  { content: "\2714"; }
+[is-prequisite-fulfilled="false"]::before { content: "\26a0"; } /* * warning sign */
+[is-prequisite-fulfilled="true"]::before  { content: "\2714"; } /* * tick */

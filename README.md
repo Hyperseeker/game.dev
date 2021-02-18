@@ -1,4 +1,4 @@
-# Status: Pre-Alpha, Unplayable
+**Status**: pre-alpha, *__unplayable__*
 
 # Essence
 

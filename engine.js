@@ -605,9 +605,6 @@ function getFeature (key, value) {
 };
 
 
-};
-
-
 // > INITIALIZATION
 
 async function fetchJSONDocument (path) {

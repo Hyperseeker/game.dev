@@ -10,6 +10,7 @@
     - [x] if prequisite feature is removed from project, features that depend on it do not count toward effort calculations and will not be part of the game
   - [x] time to develop is calculated correctly
   - [ ] game name can be randomized
-- [ ] time passes and moves project development further
+- [ ] time passes
+  - [ ] the passing of time moves project development further
 - [ ] Player's skills affect development process
   - [ ] working on a game improves Player's skill in a particular area

@@ -61,10 +61,10 @@ let Projects = {
 
 	new () {
 
-		Projects.temporary = new Project();
+		Projects.temporary  = new Project();
 
 		let defaultFeatures = COMPONENTS.filter(component => component.default),
-			defaultIDs = defaultFeatures.map(component => component.id);
+			defaultIDs      = defaultFeatures.map(component => component.id);
 
 		Projects.temporary.features = defaultIDs;
 

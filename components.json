@@ -9,8 +9,8 @@
 		"subcategory": "presentation",
 		"placeholder": "Optional",
 		"description": [
-			"Title of the game. You may change it at any point during development or at release.",
-			"If no title is chosen, one would be generated randomly. It may also be changed later."
+			"Title of the game. You may change it at any point before release.",
+			"If the field is left empty, a name would be generated for you. You may change that name before release as well."
 		]
 	},
 	{

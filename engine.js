@@ -90,7 +90,7 @@ function handleCheckboxToggle (event) {
 
 		features         = Projects.temporary.features;
 
-	features.includes(id) ? features.splice(features.indexOf(id), 1) : features.push(id);
+	features.toggle(id);
 
 	if (type === "range") {
 

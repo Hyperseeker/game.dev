@@ -76,13 +76,13 @@ let Projects = {
 
 function handleCheckboxToggle (event) {
 
-	let checkbox = event.target,
+	let checkbox         = event.target,
 		componentElement = checkbox.closest(".component"),
 
-		id = checkbox.id,
-		type = componentElement.className.match(TYPES.join("|"), "gi")[0],
+		id               = checkbox.id,
+		type             = componentElement.className.match(TYPES.join("|"), "gi")[0],
 
-		features = Projects.temporary.features;
+		features         = Projects.temporary.features;
 
 	features.includes(id) ? features.splice(features.indexOf(id), 1) : features.push(id);
 
@@ -607,9 +607,25 @@ function pickOneFromArray (array) {
 
 // > INITIALIZATION
 
+async function fetchJSONDocument (path) {
+
+	let document = await fetch(path).then(response => response.json());
+
+	return document;
+
+};
+
+async function assignJSONToConstant (pathToJSON, constant) {
+
+	let data = await fetchJSONDocument(pathToJSON);
+
+	await Object.assign(constant, data);
+
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
 
-	await fetch("components.json").then(response => response.json()).then(response => Object.assign(COMPONENTS, response));
+	await assignJSONToConstant("components.json", COMPONENTS);
 
 	Projects.new();
 

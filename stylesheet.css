@@ -234,12 +234,25 @@ label {
 
 /*  >>> Special Component Styles  */
 
-.random { cursor: pointer; }
+.random {
+
+	height: auto;
+
+	background: none;
+
+	border: none;
+	
+	padding: 0;
+
+	cursor: pointer;
+
+	float: right;
+
+}
 .random::after {
 
 	content: "\1f3b2"; /* * gaming die */
 
-	float: right;
 
 }
 

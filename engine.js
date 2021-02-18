@@ -488,7 +488,7 @@ function renderComponent (component) {
 				
 				// * futureproofing: this ↓ does not need wrapping quotation marks around the argument
 				let placeholder = `placeholder=${component.placeholder || ""}`;
-				let random = component.random ? html`<span class="random"></span>` : "";
+				let random = component.random ? html`<button class="random"></button>` : "";
 
 				return html`
 					<div class="title">

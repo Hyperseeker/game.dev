@@ -234,9 +234,10 @@ label {
 
 /*  >>> Special Component Styles  */
 
-[component-id="title"] .title::after {
+.random { cursor: pointer; }
+.random::after {
 
-	content: "\1f3b2";
+	content: "\1f3b2"; /* * gaming die */
 
 	float: right;
 

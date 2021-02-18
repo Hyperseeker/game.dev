@@ -12,7 +12,9 @@ const SELECTORS = {
 
 	toggle:    "[type='checkbox']",
 	range:     "[type='range']",
-	radio:     "[type='radio']"
+	radio:     "[type='radio']",
+
+	random:    ".random"
 	
 };
 
@@ -36,9 +38,8 @@ class Project {
 
 	constructor () {
 
-		// TODO: set up random name for the new game by default
-
-		this.title = "";
+		// TODO: make randomization optional in settings
+		this.title = Common.generateGameName();
 
 		this.features = [];
 
@@ -160,6 +161,22 @@ function handleRadioSwitch (event) {
 	updateComponentDetails(radio);
 
 	renderComplexityEffort();
+
+};
+
+function randomizeTarget (event) {
+
+	let random           = event.target,
+
+		componentElement = random.closest(SELECTORS.component),
+		componentID      = componentElement.getAttribute("component-id"),
+
+		input            = componentElement.querySelector("input"),
+		handler          = getFeature("id", componentID).random;
+
+	let content = Common[handler]();
+
+	return input.value = content;
 
 };
 
@@ -384,7 +401,13 @@ function renderComponentsList () {
 
 	});
 
-	// * STAGE IV → Display Content
+	// * STAGE IV → Render Game Title into Respected Input
+
+	let titleInput = fragment.querySelector("[component-id='title'] input");
+
+	titleInput.value = Projects.temporary.title;
+
+	// * STAGE V → Display Content
 
 	CONTAINERS.main.append(fragment);
 
@@ -465,10 +488,17 @@ function renderComponent (component) {
 				
 				// * futureproofing: this ↓ does not need wrapping quotation marks around the argument
 				let placeholder = `placeholder=${component.placeholder || ""}`;
+				let random = component.random ? html`<span class="random"></span>` : "";
 
 				return html`
 					<div class="title">
-						${component.name}
+
+						<span class="name">
+							${component.name}
+						</span>
+
+						${random}
+
 					</div>
 
 					<input type="text" ${placeholder}>
@@ -637,5 +667,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("change", `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.range}`,  handleRangeChange);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
+
+	Gator(document).on("click",  `${SELECTORS.component} ${SELECTORS.random}`, randomizeTarget);
 
 });

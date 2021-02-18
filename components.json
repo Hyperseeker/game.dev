@@ -4,6 +4,7 @@
 		"short": "titl",
 		"name": "Title",
 		"type": "input",
+		"random": "generateGameName",
 		"category": "engine",
 		"subcategory": "presentation",
 		"placeholder": "Optional",

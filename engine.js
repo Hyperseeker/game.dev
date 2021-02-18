@@ -311,7 +311,7 @@ function renderComponentsList () {
 			return html`
 				<article class="${name}">
 
-					<h1>${toTitleCase(name)}</h1>
+					<h1>${name.toTitleCase()}</h1>
 
 				</article>
 			`;
@@ -323,7 +323,7 @@ function renderComponentsList () {
 			return html`
 				<section class="${name}">
 
-					<h2>${toTitleCase(name)}</h2>
+					<h2>${name.toTitleCase()}</h2>
 
 				</section>
 			`;

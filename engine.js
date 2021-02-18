@@ -11,17 +11,13 @@ const DEFAULT_DESCRIPTION = "This here is where the description is supposed to b
 const BASE_COMPLEXITY      = 100; // * on the 1000 scale
 const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/day
 
-const TYPES = [
-	"input",
-	"toggle",
-	"range",
-	"radio"
-];
 
 
 // > PLACEHOLDERS
 
 const COMPONENTS = [];
+
+const TYPES = [];
 
 
 // > GAMEPLAY
@@ -626,6 +622,10 @@ async function assignJSONToConstant (pathToJSON, constant) {
 document.addEventListener("DOMContentLoaded", async () => {
 
 	await assignJSONToConstant("components.json", COMPONENTS);
+
+	let setOfTypes = Array.from(new Set(COMPONENTS.map(component => component.type)));
+
+	Object.assign(TYPES, setOfTypes);
 
 	Projects.new();
 

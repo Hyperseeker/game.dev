@@ -21,7 +21,7 @@ const TYPES = [
 
 // > PLACEHOLDERS
 
-let COMPONENTS = [];
+const COMPONENTS = [];
 
 
 // > GAMEPLAY

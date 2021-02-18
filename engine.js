@@ -633,9 +633,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	await assignJSONToConstant("components.json", COMPONENTS);
 
-	let setOfTypes = Array.from(new Set(COMPONENTS.map(component => component.type)));
+	// * produce an array of unique types among
+	let typesComputed = Array.from(new Set(COMPONENTS.map(component => component.type)));
 
-	Object.assign(TYPES, setOfTypes);
+	Object.assign(TYPES, typesComputed);
 
 	Projects.new();
 

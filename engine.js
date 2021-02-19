@@ -607,10 +607,7 @@ function moveChildComponentToParentElement (component, wrapper) {
 	let child  = wrapper.querySelector(`[component-id="${component.id}"]`),
 		parent = wrapper.querySelector(`[component-id="${component.parent}"]`);
 
-	let clone = child.cloneNode(true);
-	child.remove();
-
-	parent.append(clone);
+	parent.append(child);
 
 };
 

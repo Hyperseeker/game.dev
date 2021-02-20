@@ -45,6 +45,8 @@ class Project {
 
 		this.values = {};
 
+		this.active = true;
+
 	}
 
 }

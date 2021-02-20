@@ -2,7 +2,9 @@
 
 const CONTAINERS = {
 
-	main: document.querySelector("main")
+	main: document.querySelector("main"),
+
+	time: document.querySelector(".time")
 
 };
 
@@ -23,6 +25,8 @@ const DEFAULT_DESCRIPTION  = "This here is where the description is supposed to 
 const BASE_COMPLEXITY      =   0; // * NOT YET on the 1000 scale
 const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/day
 
+const TIMER_RESOLUTION     = 16;
+
 const GAMEPLAY = {
 
 	// TODO: create section for changing options // POST-ALPHA
@@ -30,9 +34,73 @@ const GAMEPLAY = {
 
 		autogenerateGameName: false
 
+	},
+
+	Time: {
+
+		current: 0,
+
+		paused: false,
+		setPauseState (state) { GAMEPLAY.Time.paused = state },
+
+		tempo: 1,
+		tempos: {
+
+			half:  0.5,
+			regular: 1,
+			faster:  2,
+			fastest: 4
+
+		},
+		setTempo (id) { GAMEPLAY.Time.tempo = GAMEPLAY.Time.tempos[id] },
+
+		schedule: [
+
+			[ "sleep",   6 ],
+
+			[ "commute", 1 ],
+
+			[ "work",    8 ],
+
+			[ "commute", 1 ],
+
+			[ "game",    4 ],
+
+			[ "rest",    2 ],
+
+			[ "sleep",   2 ]
+
+		],
+
+		progress () {
+
+			if (GAMEPLAY.Time.paused) return;
+
+			GAMEPLAY.Time.current += GAMEPLAY.Time.tempo / TIMER_RESOLUTION;
+
+			// TODO: advance progression of project work
+
+			// TODO: advance skills if working on a project
+
+			let hours      =  Math.floor(GAMEPLAY.Time.current % 24),
+				parsedTime = `${hours}`.padStart(2, "0");
+
+			updateUIComponent("time", { time: parsedTime });
+
+		}
+
 	}
 
 };
+
+const TIMER = new Tock({
+
+	resolution: TIMER_RESOLUTION,
+	cycle:      true,
+
+	callback:   GAMEPLAY.Time.progress
+
+});
 
 
 // > PLACEHOLDERS
@@ -173,6 +241,23 @@ function handleRadioSwitch (event) {
 	updateComponentDetails(radio);
 
 	renderComplexityEffort();
+
+};
+
+function handleTempoChange (event) {
+
+	let radio = event.target,
+		id = radio.id;
+
+	return GAMEPLAY.Time.setTempo(id);
+
+};
+
+function handlePauseStateChange (event) {
+
+	let checkbox = event.target;
+
+	return GAMEPLAY.Time.paused = checkbox.checked;
 
 };
 
@@ -673,10 +758,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	Projects.new();
 
+	TIMER.start();
+
 	Gator(document).on("change", `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.range}`,  handleRangeChange);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
 
 	Gator(document).on("click",  `${SELECTORS.component} ${SELECTORS.random}`, randomizeTarget);
+
+	Gator(document).on("input",  `[name="tempo"]`,  handleTempoChange);
+
+	Gator(document).on("input",  `[name="paused"]`, handlePauseStateChange);
 
 });

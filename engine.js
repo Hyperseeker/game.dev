@@ -20,7 +20,7 @@ const SELECTORS = {
 
 const DEFAULT_DESCRIPTION = "This here is where the description is supposed to be";
 
-const BASE_COMPLEXITY      = 100; // * on the 1000 scale
+const BASE_COMPLEXITY      =   0; // * NOT YET on the 1000 scale
 const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/day
 
 

@@ -23,6 +23,16 @@ const DEFAULT_DESCRIPTION  = "This here is where the description is supposed to 
 const BASE_COMPLEXITY      =   0; // * NOT YET on the 1000 scale
 const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/day
 
+const GAMEPLAY = {
+
+	// TODO: create section for changing options // POST-ALPHA
+	Options: {
+
+		autogenerateGameName: false
+
+	}
+
+};
 
 
 // > PLACEHOLDERS

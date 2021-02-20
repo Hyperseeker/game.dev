@@ -174,6 +174,8 @@ function handleCheckboxToggle (event) {
 
 	features.toggle(id);
 
+	// TODO: ↓ `enableChildrenComponents()`
+
 	if (type === "range") {
 
 		let range = componentElement.querySelector(SELECTORS.range);

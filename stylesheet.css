@@ -50,14 +50,24 @@ p + p { margin-block-start: 0.75em; }
 
 aside {
 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 	min-width: 10em;
 	max-width: 20vw;
 
-	background-color: grey;
+	padding: 1.25%;
+
+	background-color: hsl(0, 0%, 90%);
+
+	box-sizing: border-box;
 
 }
 
 aside .tab {
+
+	align-self: flex-end;
 
 	padding: 1em;
 
@@ -74,6 +84,54 @@ aside .tab.active {
 	background-color: white;
 
 }
+
+/*  >> Widgets  */
+
+aside .separator {
+
+	flex: 1;
+
+    height: 1px;
+
+    margin: 0 0.5em;
+
+    background-color: grey;
+
+}
+
+aside .widgets { /* ... */ }
+
+/*  >>> Time  */
+
+aside .widget.time {
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+aside .widget.time .particle {
+
+	--particle-color: none;
+	--particle-size: 8px;
+
+	width:  var(--particle-size);
+	height: var(--particle-size);
+
+	background-color: var(--particle-color);
+
+	border-radius: 50%;
+
+	filter: contrast(50%);
+
+}
+
+aside .widget.time .particle.sleep   { --particle-color: blue; }
+aside .widget.time .particle.commute { --particle-color: rebeccapurple; }
+aside .widget.time .particle.work    { --particle-color: orange; }
+aside .widget.time .particle.project { --particle-color: green; }
+aside .widget.time .particle.rest    { --particle-color: grey; }
 
 
 /*  > MAIN  */

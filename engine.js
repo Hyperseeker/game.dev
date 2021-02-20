@@ -116,8 +116,9 @@ class Project {
 
 	constructor () {
 
-		// TODO: make randomization optional in settings
-		this.title = Common.generateGameName();
+		this.title = GAMEPLAY.Options.autogenerateGameName 
+						? Common.generateGameName() 
+						: "";
 
 		this.features = [];
 

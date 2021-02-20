@@ -699,6 +699,18 @@ function renderComplexityEffort () {
 
 };
 
+function updateUIComponent (id, data) {
+
+	let handler = {
+
+		"time" (data) { return CONTAINERS.time.querySelector(".current").textContent = `${data.time}:00` }
+
+	};
+
+	return handler[id](data);
+
+}
+
 
 // > UTILITY
 

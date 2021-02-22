@@ -185,6 +185,10 @@ aside .widget.time {
 	display:         flex;
 	justify-content: center;
 	align-items:     center;
+
+	font-size:       2em;
+	font-weight:     bold;
+	color:          hsl(0, 0%, 20%);
 	
 }
 

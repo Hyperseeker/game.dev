@@ -8,8 +8,8 @@
 :root {
 
 	/*  Colors  */
-	
-	/* colors */
+
+	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
 
 }
 
@@ -219,6 +219,17 @@ main section .component .component {
 
 
 /*  >>>> Component Details  */
+
+[type="text"] {
+
+	box-shadow: inset 0 0.0625em 0.125em var(--input-shadow-color);
+	
+	transition: box-shadow 0.5s;
+
+}
+
+[type="text"]:focus-within,
+[type="text"]:not(:placeholder-shown) { box-shadow: none; }
 
 input + label { padding-inline-start: 0.5ex; }
 

@@ -162,6 +162,9 @@ aside label:hover           span::after { opacity:  0.25; }
 aside label input:checked + span::after { opacity:     1; }
 aside label input:checked + span        { color: white; }
 
+
+/*  >> Fieldset  */
+
 /* * ↓ fixes bug where browser sets odd defaults  */
 /* *   affects `fieldset legend` using `text-overflow: ellipsis` */
 /* *   see: https://stackoverflow.com/a/29499408 */

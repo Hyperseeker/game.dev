@@ -133,6 +133,35 @@ aside .separator {
 	
 }
 
+
+/*  >> Label  */
+
+aside label span::after {
+
+	content:  "";
+	
+	position: absolute;
+	top:      0;
+	left:     0;
+	
+	width:    100%;
+	height:   100%;
+
+	background-color: var(--theme-color-primary);
+
+	border-radius: var(--border-radius);
+		
+	z-index: -1;
+
+	opacity:  0;
+
+}
+
+aside label:hover           span::after { opacity:  0.25; }
+
+aside label input:checked + span::after { opacity:     1; }
+aside label input:checked + span        { color: white; }
+
 /* * ↓ fixes bug where browser sets odd defaults  */
 /* *   affects `fieldset legend` using `text-overflow: ellipsis` */
 /* *   see: https://stackoverflow.com/a/29499408 */

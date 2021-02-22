@@ -66,6 +66,7 @@ aside {
 }
 
 aside article { width: 100%; }
+aside article + article { margin-block-start: var(--base-spacing); }
 
 /*  >> Widgets  */
 

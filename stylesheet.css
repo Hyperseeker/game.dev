@@ -250,6 +250,9 @@ aside .tab label {
 
 }
 
+/* * reset `color` from using one that contrasts with theme-colored background */
+aside .tab label input:checked + span { color: initial; }
+
 aside .tab label span::after {
 
 	--tab-backgrould-width: calc(100% + var(--sidebar-padding));

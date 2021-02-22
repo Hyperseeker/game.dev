@@ -58,6 +58,23 @@ p + p { margin-block-start: 0.75em; }
 
 fieldset { background-color: var(--theme-color-background); }
 
+legend {
+
+    position:         relative;
+
+    padding:          var(--label-padding);
+
+    border-radius:    var(--border-radius);
+
+	background-color: var(--theme-color-primary);
+
+    line-height:      1;
+    color:          white;
+
+    z-index:          1;
+
+}
+
 label,
 legend { user-select: none; }
 

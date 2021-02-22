@@ -78,6 +78,13 @@ legend {
 label,
 legend { user-select: none; }
 
+label {
+
+	display: inline-flex;
+	align-items: center;
+
+}
+
 [type="range"] {
 	
 	--range-offset: 0.25ex;

@@ -65,6 +65,7 @@ aside {
 
 }
 
+aside article { width: 100%; }
 
 /*  >> Widgets  */
 
@@ -79,8 +80,6 @@ aside .separator {
     background-color: grey;
 
 }
-
-aside .widgets { width: 100%; }
 
 /* * ↓ fixes bug where browser sets odd defaults  */
 /* *   affects `fieldset legend` using `text-overflow: ellipsis` */

@@ -366,7 +366,8 @@ main section .component .component {
 [type="text"]:focus-within,
 [type="text"]:not(:placeholder-shown) { box-shadow: none; }
 
-input + label { padding-inline-start: 0.5ex; }
+label input + span,
+      input + label { margin-inline-start: 0.75ex; }
 
 [type="checkbox"] { margin: 0; }
 

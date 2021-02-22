@@ -178,22 +178,50 @@ aside .widget.time {
 
 /*  >> Tabs  */
 
-aside .tab {
-	
-	align-self: flex-end;
-	
-	padding: 1em;
-	
-	text-align: center;
-	
+aside .tabs ul {
+
+	list-style: none;
+
+	padding-inline-start: 0;
+
 }
 
-aside .tab.active {
+aside .tab { display: flex; }
+aside .tab:hover                    span::after { opacity: 0.25; }
+aside .tab [type="radio"]:checked + span::after { opacity:    1; }
+
+aside .tab label {
+
+	position: relative;
+
+	flex:     1;
 	
-	border-right: none;
+	text-align:  center;
+	line-height: 3;
+
+	z-index:  1;
+
+}
+
+aside .tab label span::after {
+
+	--tab-backgrould-width: calc(100% + var(--sidebar-padding));
+
+	content:  "";
+	
+	position: absolute;
+	top:      0;
+	left:     0;
+	
+	width:    var(--tab-backgrould-width);
+	height:   100%;
 	
 	background-color: white;
 	
+	z-index: -1;
+
+	opacity:  0;
+
 }
 
 

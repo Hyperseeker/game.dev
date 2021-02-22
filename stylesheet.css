@@ -87,6 +87,9 @@ aside .separator {
 /* *   see: https://stackoverflow.com/a/29499408 */
 aside .widget fieldset { min-width: 0; }
 
+aside .widget fieldset > * + * { margin-block-start: var(--base-spacing); }
+aside .widget fieldset > legend + * { margin-block-start: 0; }
+
 aside .widget fieldset legend {
 
 	/* * TEMP: unset from `reset.css` to allow `text-overflow` */

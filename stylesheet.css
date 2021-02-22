@@ -6,27 +6,27 @@
 /*  VARIABLES  */
 
 :root {
-
+	
 	/*  Colors  */
-
+	
 	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
-
+	
 }
 
 
 /*  BASICS  */
 
 body {
-
+	
 	display: flex;
-
+	
 	min-height: 100vh;
-
+	
 	font-family: sans-serif;
 	line-height: 1.33;
 	
 	box-sizing: border-box;
-
+	
 }
 
 aside,
@@ -36,33 +36,33 @@ p { margin: 0; }
 p + p { margin-block-start: 0.75em; }
 
 [type="range"] {
-
+	
 	--range-offset: 0.25ex;
-
+	
 	width: calc(100% + var(--range-offset) * 2);
-
+	
 	margin-inline-start: calc(var(--range-offset) * -1);
-
+	
 }
 
 
 /*  SIDEBAR  */
 
 aside {
-
+	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	
 	min-width: 10em;
 	max-width: 20vw;
-
+	
 	padding: 1.25%;
-
+	
 	background-color: hsl(0, 0%, 90%);
-
+	
 	box-sizing: border-box;
-
+	
 }
 
 aside article { width: 100%; }
@@ -71,15 +71,15 @@ aside article + article { margin-block-start: var(--base-spacing); }
 /*  >> Widgets  */
 
 aside .separator {
-
+	
 	flex: 1;
-
-    height: 1px;
-
-    margin: 0 0.5em;
-
-    background-color: grey;
-
+	
+	height: 1px;
+	
+	margin: 0 0.5em;
+	
+	background-color: grey;
+	
 }
 
 /* * ↓ fixes bug where browser sets odd defaults  */
@@ -91,17 +91,17 @@ aside .widget fieldset > * + * { margin-block-start: var(--base-spacing); }
 aside .widget fieldset > legend + * { margin-block-start: 0; }
 
 aside .widget fieldset legend {
-
+	
 	/* * TEMP: unset from `reset.css` to allow `text-overflow` */
 	display: inline;
-
+	
 	max-width: 100%;
-
+	
 	overflow: hidden;
-
+	
 	white-space: nowrap;
 	text-overflow: ellipsis;
-
+	
 	box-sizing: border-box;
 
 }
@@ -109,43 +109,43 @@ aside .widget fieldset legend {
 /*  >>> Time  */
 
 aside .widget.time {
-
+	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	
 }
 
 
 /*  >> Tabs  */
 
 aside .tab {
-
+	
 	align-self: flex-end;
-
+	
 	padding: 1em;
-
+	
 	text-align: center;
-
+	
 }
 
 aside .tab.active {
-
+	
 	border-right: none;
 	
 	background-color: white;
-
+	
 }
 
 
 /*  > MAIN  */
 
 main {
-
+	
 	max-width: 75ch;
-
+	
 	padding: 5%;
-
+	
 }
 
 
@@ -157,9 +157,9 @@ main article + article { margin-block-start: 3em; }
 main article h1 {
 	
 	font-size: 3.5em;
-
+	
 	margin: 0 0 0.25em 0;
-
+	
 }
 
 main article h1 + section { margin-block-start: 1em; }
@@ -168,45 +168,45 @@ main article h1 + section { margin-block-start: 1em; }
 /*  >> Subcategories  */
 
 main section {
-
-    /* ... */
+	
+	/* ... */
 	
 }
 
 main section + section { margin-block-start: 2em; }
 
 main section h2 {
-
+	
 	margin-block-end: 0.5em;
 	
 	font-size: 2.5em;
-
+	
 }
 
 
 /*  >>> Components  */
 
 main section .component {
-
+	
 	width: 100%;
-
+	
 	border: 1px solid transparent;
-
+	
 	padding: 1em;
 	margin: -1em;
-
+	
 }
 main section .component:first-child { margin-inline-start: 0; }
 main section .component:last-child  { margin-inline-end:   0; }
 
 main section .component:hover {
-
+	
 	background-color: canvas;
-
+	
 	border-color: grey;
-
+	
 	box-shadow: 0 0 12px hsl(0, 0%, 50%, 0.25);
-
+	
 }
 
 main section .component + .component { margin-block-start: 1em; }
@@ -214,20 +214,20 @@ main section .component + .component { margin-block-start: 1em; }
 main section .component > * + * { margin-block-start: 0.75em; }
 
 main section .component .component {
-
+	
 	margin: 0.75em -1.5em 0 1.5em;
-
+	
 }
 
 
 /*  >>>> Component Details  */
 
 [type="text"] {
-
+	
 	box-shadow: inset 0 0.0625em 0.125em var(--input-shadow-color);
 	
 	transition: box-shadow 0.5s;
-
+	
 }
 
 [type="text"]:focus-within,
@@ -242,9 +242,9 @@ input + label { padding-inline-start: 0.5ex; }
 label {
 	
 	vertical-align: middle;
-
+	
 	cursor: pointer;
-
+	
 }
 
 [type="text"] { box-sizing: border-box; }
@@ -259,7 +259,7 @@ label {
 .component.toggle > .title ~ * { margin-inline-start: 2ex; }
 
 .component.range .title {
-
+	
 	display: flex;
 	align-items: center;
 	
@@ -268,17 +268,17 @@ label {
 .component .complexity {
 	
 	margin-inline-start: 0.5em;
-
+	
 	font-weight: normal;
-
+	
 	opacity: 0.75;
-
+	
 }
 
 .component.range .state { margin-inline-start: auto; }
 
 .component.radio fieldset {
-
+	
 	display: flex;
 	justify-content: space-around;
 	
@@ -288,57 +288,57 @@ label {
 /*  >>> TEMP: Derived  */
 
 .effort {
-
+	
 	margin-block-start: 3em;
 	
 	font-size: 1.25em;
-    text-align: center;
+	text-align: center;
 	
 }
 
 .hours {
-
+	
 	font-size: 2.5em;
-
+	
 	margin: 0.33em 0;
-
+	
 }
 
 
 /*  >>> Special Component Styles  */
 
 .random {
-
+	
 	height: auto;
-
+	
 	background: none;
-
+	
 	border: none;
 	
 	padding: 0;
-
+	
 	cursor: pointer;
-
+	
 	float: right;
-
+	
 }
 .random::after {
-
+	
 	content: "\1f3b2"; /* * gaming die */
-
-
+	
+	
 }
 
 .prequisites {
-
+	
 	padding-inline-start: 0;
-
+	
 	list-style: none;
-
+	
 }
 
 [is-prequisite-fulfilled]::before {
-
+	
 	--width: 1ex;
 	
 	display: inline-block;
@@ -346,7 +346,7 @@ label {
 	width: var(--width);
 	
 	margin-inline-end: calc(var(--width) * 1.2);
-
+	
 }
 
 [is-prequisite-fulfilled="false"]::before { content: "\26a0"; } /* * warning sign */

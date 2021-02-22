@@ -209,7 +209,7 @@ main section .component:hover {
 
 main section .component + .component { margin-block-start: 1em; }
 
-main section .component > * + * { margin-block-start: 0.5em; }
+main section .component > * + * { margin-block-start: 0.75em; }
 
 main section .component .component {
 

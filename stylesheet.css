@@ -59,10 +59,12 @@ p + p { margin-block-start: 0.75em; }
 [type="range"] {
 	
 	--range-offset: 0.25ex;
+	--range-width:  calc(100% + var(--range-offset) * 2);
+	--range-margin: calc(var(--range-offset) * -1);
 	
-	width: calc(100% + var(--range-offset) * 2);
+	width: var(--range-width);
 	
-	margin-inline-start: calc(var(--range-offset) * -1);
+	margin-inline-start: var(--range-margin);
 	
 }
 

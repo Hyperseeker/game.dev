@@ -204,7 +204,8 @@ aside .tab label {
 
 	flex:        1;
 	
-	line-height: 3;
+	/* * sets total height of a tab */
+	line-height: 4;
 
 	z-index:     1;
 

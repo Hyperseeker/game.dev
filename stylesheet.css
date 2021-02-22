@@ -101,37 +101,17 @@ aside .separator {
 
 aside .widgets { /* ... */ }
 
-/*  >>> Time  */
 
-aside .widget.time {
 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 
-}
 
-aside .widget.time .particle {
 
-	--particle-color: none;
-	--particle-size: 8px;
 
-	width:  var(--particle-size);
-	height: var(--particle-size);
 
-	background-color: var(--particle-color);
 
-	border-radius: 50%;
 
-	filter: contrast(50%);
 
 }
-
-aside .widget.time .particle.sleep   { --particle-color: blue; }
-aside .widget.time .particle.commute { --particle-color: rebeccapurple; }
-aside .widget.time .particle.work    { --particle-color: orange; }
-aside .widget.time .particle.project { --particle-color: green; }
-aside .widget.time .particle.rest    { --particle-color: grey; }
 
 
 /*  > MAIN  */

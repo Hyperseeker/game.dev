@@ -65,23 +65,6 @@ aside {
 
 }
 
-aside .tab {
-
-	align-self: flex-end;
-
-	padding: 1em;
-
-	text-align: center;
-
-}
-
-aside .tab.active {
-
-	border-right: none;
-	
-	background-color: white;
-
-}
 
 /*  >> Widgets  */
 
@@ -125,6 +108,27 @@ aside .widget.time {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+}
+
+
+/*  >> Tabs  */
+
+aside .tab {
+
+	align-self: flex-end;
+
+	padding: 1em;
+
+	text-align: center;
+
+}
+
+aside .tab.active {
+
+	border-right: none;
+	
+	background-color: white;
 
 }
 

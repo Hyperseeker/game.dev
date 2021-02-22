@@ -134,7 +134,7 @@ aside fieldset label {
 	
 	position:    relative;
 	
-	padding: 0.33em;
+	padding:     var(--label-padding);
 	
 	line-height: 1;
 	

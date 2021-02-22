@@ -120,8 +120,13 @@ aside .widget fieldset legend {
 
 }
 
+/*  >>> Time  */
 
+aside .widget.time {
 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
 }
 

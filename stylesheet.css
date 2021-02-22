@@ -108,13 +108,13 @@ aside {
 	
 	max-width:      15vw;
 	
-	padding: var(--sidebar-padding);
+	padding:        var(--sidebar-padding);
 	
 	background-color: var(--sidebar-background);
 
-	overflow-x: hidden;
+	overflow-x:     hidden;
 	
-	box-sizing: border-box;
+	box-sizing:     border-box;
 	
 }
 

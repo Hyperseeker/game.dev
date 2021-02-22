@@ -375,8 +375,6 @@ label input + span,
 [type="radio"],
 label {
 	
-	vertical-align: middle;
-	
 	cursor: pointer;
 	
 }

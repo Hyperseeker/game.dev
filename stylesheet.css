@@ -191,17 +191,7 @@ aside .widget.time {
 
 /*  >> Tabs  */
 
-aside .tabs ul {
-
-	list-style: none;
-
-	padding-inline-start: 0;
-
-}
-
 aside .tab { display: flex; }
-aside .tab:hover                    span::after { opacity: 0.25; }
-aside .tab [type="radio"]:checked + span::after { opacity:    1; }
 
 aside .tab label {
 

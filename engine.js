@@ -46,10 +46,10 @@ const GAMEPLAY = {
 		tempo: 1,
 		tempos: {
 
-			half:  0.5,
-			regular: 1,
-			faster:  2,
-			fastest: 4
+			slower: 0.5,
+			regular:  1,
+			faster:   2,
+			fastest:  4
 
 		},
 		setTempo (id) { GAMEPLAY.Time.tempo = GAMEPLAY.Time.tempos[id] },

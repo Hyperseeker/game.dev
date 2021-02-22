@@ -169,34 +169,7 @@ aside fieldset label {
 	
 }
 
-aside .widget fieldset label span {
-	
-	margin-inline-start: 0.25em;
-	
-	line-height: 1;
-	
-}
 
-
-aside .widget fieldset label input:checked + span::after {
-	
-	content:  "";
-	
-	position: absolute;
-	top:      0;
-	left:     0;
-	
-	width:    100%;
-	height:   100%;
-	
-	/* TODO: replace with unified project-sourced theme color */
-	background-color: highlight;
-	
-	border-radius: 0.25em;
-	
-	z-index: -1;
-	
-}
 
 aside ul {
 	

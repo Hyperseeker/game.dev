@@ -58,6 +58,9 @@ p + p { margin-block-start: 0.75em; }
 
 fieldset { background-color: var(--theme-color-background); }
 
+label,
+legend { user-select: none; }
+
 [type="range"] {
 	
 	--range-offset: 0.25ex;

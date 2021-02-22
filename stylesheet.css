@@ -205,6 +205,8 @@ aside .tab { display: flex; }
 
 aside .tab label {
 
+	justify-content: center;
+
 	position:    relative;
 
 	flex:        1;

@@ -253,7 +253,8 @@ main article h1 {
 	
 	font-size:        3.5em;
 	
-	margin: 0 0 0.25em 0;
+	margin:           0;
+	margin-block-end: 0.25em;
 	
 }
 

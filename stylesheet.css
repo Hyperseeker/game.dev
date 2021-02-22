@@ -10,6 +10,8 @@
 	/*  >> Colors  */
 	
 	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
+
+	--sidebar-background: hsl(0, 0%, 90%);
 	
 }
 
@@ -59,7 +61,7 @@ aside {
 	
 	padding: 1.25%;
 	
-	background-color: hsl(0, 0%, 90%);
+	background-color: var(--sidebar-background);
 	
 	box-sizing: border-box;
 	

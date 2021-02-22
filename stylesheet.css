@@ -106,6 +106,7 @@ aside {
 	align-items:    center;
 	flex:           0 1 20%;
 	
+	min-width:      10em;
 	max-width:      15vw;
 	
 	padding:        var(--sidebar-padding);

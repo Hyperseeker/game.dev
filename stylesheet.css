@@ -1,20 +1,20 @@
-/*  FONTS  */
+/*  > FONTS  */
 
 /*  insert fonts, or use "see <file with fonts>.css" */
 
 
-/*  VARIABLES  */
+/*  > VARIABLES  */
 
 :root {
 	
-	/*  Colors  */
+	/*  >> Colors  */
 	
 	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
 	
 }
 
 
-/*  BASICS  */
+/*  > BASICS  */
 
 body {
 	
@@ -46,7 +46,7 @@ p + p { margin-block-start: 0.75em; }
 }
 
 
-/*  SIDEBAR  */
+/*  > SIDEBAR  */
 
 aside {
 	

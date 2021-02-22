@@ -79,6 +79,8 @@ aside {
 	padding: var(--sidebar-padding);
 	
 	background-color: var(--sidebar-background);
+
+	overflow-x: hidden;
 	
 	box-sizing: border-box;
 	

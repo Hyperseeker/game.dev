@@ -56,6 +56,8 @@ main { flex: 1; }
 p     { margin: 0; }
 p + p { margin-block-start: 0.75em; }
 
+fieldset { background-color: var(--theme-color-background); }
+
 [type="range"] {
 	
 	--range-offset: 0.25ex;

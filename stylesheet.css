@@ -130,9 +130,9 @@ aside fieldset legend {
 	
 }
 
-aside .widget fieldset label {
 	
 	display: table;
+aside fieldset label {
 	
 	position:    relative;
 	

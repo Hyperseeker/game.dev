@@ -13,6 +13,11 @@
 
 	--sidebar-background: hsl(0, 0%, 90%);
 	
+
+	/*  >> Sizing */
+
+	--sidebar-padding: 1.25vw;
+
 }
 
 

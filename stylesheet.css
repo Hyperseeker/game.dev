@@ -150,6 +150,12 @@ aside .widget fieldset label input:checked + span::after {
 	
 }
 
+aside .widget fieldset ul {
+	
+	list-style: none;
+	
+	padding-left: 0;
+	
 }
 
 /*  >>> Time  */

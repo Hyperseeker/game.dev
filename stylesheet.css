@@ -37,14 +37,14 @@
 
 body {
 	
-	display: flex;
+	display:     flex;
 	
-	min-height: 100vh;
+	min-height:  100vh;
 	
 	font-family: sans-serif;
 	line-height: 1.33;
 	
-	box-sizing: border-box;
+	box-sizing:  border-box;
 	
 }
 
@@ -69,9 +69,9 @@ p + p { margin-block-start: 0.75em; }
 
 aside {
 	
-	display: flex;
+	display:        flex;
 	flex-direction: column;
-	align-items: center;
+	align-items:    center;
 	
 	min-width: 10em;
 	max-width: 20vw;
@@ -112,16 +112,16 @@ aside .widget fieldset > legend + * { margin-block-start: 0; }
 aside .widget fieldset legend {
 	
 	/* * TEMP: unset from `reset.css` to allow `text-overflow` */
-	display: inline;
+	display:       inline;
 	
-	max-width: 100%;
+	max-width:     100%;
 	
-	overflow: hidden;
+	overflow:      hidden;
 	
-	white-space: nowrap;
+	white-space:   nowrap;
 	text-overflow: ellipsis;
 	
-	box-sizing: border-box;
+	box-sizing:    border-box;
 	
 }
 
@@ -129,7 +129,7 @@ aside .widget fieldset label {
 	
 	display: table;
 	
-	position: relative;
+	position:    relative;
 	
 	padding: 0.33em;
 	
@@ -181,9 +181,9 @@ aside .widget fieldset ul {
 
 aside .widget.time {
 	
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	display:         flex;
+	justify-content: center;
+	align-items:     center;
 	
 }
 
@@ -204,14 +204,14 @@ aside .tab [type="radio"]:checked + span::after { opacity:    1; }
 
 aside .tab label {
 
-	position: relative;
+	position:    relative;
 
-	flex:     1;
+	flex:        1;
 	
 	text-align:  center;
 	line-height: 3;
 
-	z-index:  1;
+	z-index:     1;
 
 }
 
@@ -243,7 +243,7 @@ main {
 	
 	max-width: 75ch;
 	
-	padding: 5%;
+	padding:   5%;
 	
 }
 
@@ -255,7 +255,7 @@ main article + article { margin-block-start: 3em; }
 
 main article h1 {
 	
-	font-size: 3.5em;
+	font-size:        3.5em;
 	
 	margin: 0 0 0.25em 0;
 	
@@ -278,7 +278,7 @@ main section h2 {
 	
 	margin-block-end: 0.5em;
 	
-	font-size: 2.5em;
+	font-size:        2.5em;
 	
 }
 
@@ -287,9 +287,9 @@ main section h2 {
 
 main section .component {
 	
-	width: 100%;
+	width:   100%;
 	
-	border: 1px solid transparent;
+	border:  1px solid transparent;
 	
 	padding: 1em;
 	margin: -1em;

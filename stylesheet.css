@@ -92,8 +92,6 @@ aside {
 aside article           { width: 100%; }
 aside article + article { margin-block-start: var(--base-spacing); }
 
-/*  >> Widgets  */
-
 aside .separator {
 	
 	flex: 1;
@@ -178,6 +176,10 @@ aside ul {
 	padding-inline-start: 0;
 	
 }
+
+
+/*  >> Widgets  */
+
 
 /*  >>> Time  */
 

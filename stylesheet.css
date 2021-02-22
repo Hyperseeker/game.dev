@@ -99,14 +99,26 @@ aside .separator {
 
 }
 
-aside .widgets { /* ... */ }
+aside .widgets { width: 100%; }
 
+/* * ↓ fixes bug where browser sets odd defaults  */
+/* *   affects `fieldset legend` using `text-overflow: ellipsis` */
+/* *   see: https://stackoverflow.com/a/29499408 */
+aside .widget fieldset { min-width: 0; }
 
+aside .widget fieldset legend {
 
+	/* * TEMP: unset from `reset.css` to allow `text-overflow` */
+	display: inline;
 
+	max-width: 100%;
 
+	overflow: hidden;
 
+	white-space: nowrap;
+	text-overflow: ellipsis;
 
+}
 
 
 

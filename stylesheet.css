@@ -12,7 +12,15 @@
 	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
 
 	--sidebar-background: hsl(0, 0%, 90%);
-	
+
+
+	/*  >>> Theme */
+
+	--theme-color-primary:    highlight;
+
+	--theme-color-background: canvas;
+	--theme-color-text:       canvastext;
+
 
 	/*  >> Sizing */
 

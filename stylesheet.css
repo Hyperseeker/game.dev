@@ -264,6 +264,10 @@ aside .tab label span::after {
 	border-top-right-radius:    0;
 	border-bottom-right-radius: 0;
 
+	/* *     ↓ same color as `reset.css` `--base-border` */
+	/* TODO: include the color into a unified color scheme / post-reset stylesheet */
+	box-shadow: 0 0 0.25em hsl(0, 0%, 80%);
+
 }
 
 

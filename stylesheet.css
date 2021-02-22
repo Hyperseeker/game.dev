@@ -374,12 +374,7 @@ label {
 	float: right;
 	
 }
-.random::after {
-	
-	content: "\1f3b2"; /* * gaming die */
-	
-	
-}
+.random::after { content: "\1f3b2"; } /* * ← gaming die */
 
 .prequisites {
 	

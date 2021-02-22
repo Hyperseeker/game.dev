@@ -282,13 +282,16 @@ main section h2 {
 /*  >>> Components  */
 
 main section .component {
+
+	--component-internal-padding: 1em;
+	--component-internal-margin: calc(var(--component-internal-padding) * -1);
 	
 	width:   100%;
 	
 	border:  1px solid transparent;
 	
-	padding: 1em;
-	margin: -1em;
+	padding: var(--component-internal-padding);
+	margin:  var(--component-internal-margin);
 	
 }
 main section .component:first-child { margin-inline-start: 0; }

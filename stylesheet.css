@@ -263,11 +263,7 @@ main article h1 + section { margin-block-start: 1em; }
 
 /*  >> Subcategories  */
 
-main section {
-	
-	/* ... */
-	
-}
+main section { /* ... */ }
 
 main section + section { margin-block-start: 2em; }
 

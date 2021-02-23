@@ -10,26 +10,26 @@
 	/*  >> Colors  */
 	
 	--input-shadow-color: hsla(0, 0%, 4%, 0.1);
-
+	
 	--sidebar-background: hsl(0, 0%, 90%);
-
-
+	
+	
 	/*  >>> Theme */
-
+	
 	--theme-color-primary:    highlight;
-
+	
 	--theme-color-background: canvas;
 	--theme-color-text:       canvastext;
-
-
+	
+	
 	/*  >> Sizing */
-
+	
 	--sidebar-padding: 1.25vw;
-
+	
 	--border-radius:   0.25em;
-
+	
 	--label-padding:   0.33em;
-
+	
 }
 
 
@@ -40,7 +40,7 @@ body {
 	display:     flex;
 	
 	min-height:  100vh;
-
+	
 	background-color: var(--theme-color-background);
 	
 	font-family: sans-serif;
@@ -59,30 +59,30 @@ p + p { margin-block-start: 0.75em; }
 fieldset { background-color: var(--theme-color-background); }
 
 legend {
-
-    position:         relative;
-
-    padding:          var(--label-padding);
-
-    border-radius:    var(--border-radius);
-
+	
+	position:         relative;
+	
+	padding:          var(--label-padding);
+	
+	border-radius:    var(--border-radius);
+	
 	background-color: var(--theme-color-primary);
-
-    line-height:      1;
-    color:          white;
-
-    z-index:          1;
-
+	
+	line-height:      1;
+	color:          white;
+	
+	z-index:          1;
+	
 }
 
 label,
 legend { user-select: none; }
 
 label {
-
+	
 	display: inline-flex;
 	align-items: center;
-
+	
 }
 
 [type="range"] {
@@ -112,7 +112,7 @@ aside {
 	padding:        var(--sidebar-padding);
 	
 	background-color: var(--sidebar-background);
-
+	
 	overflow-x:     hidden;
 	
 	box-sizing:     border-box;
@@ -138,7 +138,7 @@ aside .separator {
 /*  >> Label  */
 
 aside label span::after {
-
+	
 	content:  "";
 	
 	position: absolute;
@@ -147,15 +147,15 @@ aside label span::after {
 	
 	width:    100%;
 	height:   100%;
-
+	
 	background-color: var(--theme-color-primary);
-
+	
 	border-radius: var(--border-radius);
-		
+	
 	z-index: -1;
-
+	
 	opacity:  0;
-
+	
 }
 
 aside label:hover           span::after { opacity:  0.25; }
@@ -199,17 +199,17 @@ aside fieldset label {
 	line-height: 1;
 	
 	z-index:     1;
-
+	
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	
 }
 
 aside fieldset label input {
-
-    position: absolute;
-    left: var(--label-padding);
-
+	
+	position: absolute;
+	left: var(--label-padding);
+	
 }
 
 
@@ -247,38 +247,38 @@ aside .widget.time {
 aside .tab { display: flex; }
 
 aside .tab label {
-
+	
 	justify-content: center;
-
+	
 	position:    relative;
-
+	
 	flex:        1;
 	
 	/* * sets total height of a tab */
 	line-height: 4;
-
+	
 	z-index:     1;
-
+	
 }
 
 /* * reset `color` from using one that contrasts with theme-colored background */
 aside .tab label input:checked + span { color: initial; }
 
 aside .tab label span::after {
-
+	
 	--tab-backgrould-width: calc(100% + var(--sidebar-padding));
-
+	
 	width: var(--tab-backgrould-width);
-
+	
 	background-color: white;
-
+	
 	border-top-right-radius:    0;
 	border-bottom-right-radius: 0;
-
+	
 	/* *     ↓ same color as `reset.css` `--base-border` */
 	/* TODO: include the color into a unified color scheme / post-reset stylesheet */
 	box-shadow: 0 0 0.25em hsl(0, 0%, 80%);
-
+	
 }
 
 
@@ -328,7 +328,7 @@ main section h2 {
 /*  >>> Components  */
 
 main section .component {
-
+	
 	--component-internal-padding: 1em;
 	--component-internal-margin: calc(var(--component-internal-padding) * -1);
 	
@@ -470,7 +470,7 @@ label {
 .prequisites {
 	
 	list-style: none;
-
+	
 	padding-inline-start: 0;
 	
 }

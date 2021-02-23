@@ -227,20 +227,6 @@ aside ul {
 /*  >> Widgets  */
 
 
-/*  >>> Time  */
-
-aside .widget.time {
-	
-	display:         flex;
-	justify-content: center;
-	align-items:     center;
-
-	font-size:       2em;
-	font-weight:     bold;
-	color:          hsl(0, 0%, 20%);
-	
-}
-
 
 /*  >> Tabs  */
 
@@ -449,6 +435,23 @@ label {
 
 
 /*  >>> Special Component Styles  */
+
+time {
+
+	display: table;
+	
+	margin: 0 auto;
+	
+}
+time::after {
+	
+	content: attr(datetime);
+	
+	font-size:   2em;
+	font-weight: bold;
+	color:       hsl(0, 0%, 20%);
+	
+}
 
 .random {
 	

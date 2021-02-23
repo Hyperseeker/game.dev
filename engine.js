@@ -4,7 +4,7 @@ const CONTAINERS = {
 
 	main: document.querySelector("main"),
 
-	time: document.querySelector(".time")
+	time: document.querySelector("aside time")
 
 };
 
@@ -703,7 +703,7 @@ function updateUIComponent (id, data) {
 
 	let handler = {
 
-		"time" (data) { return CONTAINERS.time.querySelector(".current").textContent = `${data.time}:00` }
+		"time" (data) { return CONTAINERS.time.setAttribute("datetime", `${data.time}:00`); }
 
 	};
 

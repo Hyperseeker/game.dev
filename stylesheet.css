@@ -477,13 +477,13 @@ label {
 
 [is-prequisite-fulfilled]::before {
 	
-	--width: 1ex;
+	--prequisite-width: 1ex;
 	
 	display: inline-block;
 	
-	width: var(--width);
+	width: var(--prequisite-width);
 	
-	margin-inline-end: calc(var(--width) * 1.2);
+	margin-inline-end: calc(var(--prequisite-width) * 1.2);
 	
 }
 

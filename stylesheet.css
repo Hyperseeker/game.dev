@@ -400,17 +400,6 @@ label,
 
 [disabled] { cursor: not-allowed; }
 
-.component        label,
-.component.input .title { font-weight: bold; }
-
-.component.toggle > .title ~ * { margin-inline-start: 2ex; }
-
-.component.range .title {
-	
-	display: flex;
-	align-items: center;
-	
-}
 
 .component .complexity {
 	
@@ -419,12 +408,24 @@ label,
 	font-weight: normal;
 	
 	opacity: 0.75;
+
+}
+
+.component               label,
+[component-type="text"] .title { font-weight: bold; }
+
+[component-type="toggle"] > .title ~ * { margin-inline-start: 2ex; }
+
+[component-type="range"] .title {
+	
+	display: flex;
+	align-items: center;
 	
 }
 
-.component.range .state { margin-inline-start: auto; }
+[component-type="range"] .state { margin-inline-start: auto; }
 
-.component.radio fieldset {
+[component-type="radio"] fieldset {
 	
 	display: flex;
 	justify-content: space-around;

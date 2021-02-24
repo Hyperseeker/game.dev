@@ -56,7 +56,16 @@ main { flex: 1; }
 p     { margin: 0; }
 p + p { margin-block-start: 0.75em; }
 
-fieldset { background-color: var(--theme-color-background); }
+fieldset {
+	
+	/* * ↓ fixes bug where browser sets odd defaults  */
+	/* *   affects `fieldset legend` using `text-overflow: ellipsis` */
+	/* *   see: https://stackoverflow.com/a/29499408 */
+	min-width: 0;
+
+	background-color: var(--theme-color-background);
+
+}
 
 legend {
 	
@@ -73,6 +82,23 @@ legend {
 	
 	z-index:          1;
 	
+}
+
+
+fieldset legend {
+	
+	/* * TEMP: unset from `reset.css` to allow `text-overflow` */
+	display:       inline;
+	
+	max-width:     100%;
+	
+	overflow:      hidden;
+	
+	white-space:   nowrap;
+	text-overflow: ellipsis;
+	
+	box-sizing:    border-box;
+
 }
 
 label,
@@ -167,29 +193,8 @@ aside label input:checked + span        { color: white; }
 
 /*  >> Fieldset  */
 
-/* * ↓ fixes bug where browser sets odd defaults  */
-/* *   affects `fieldset legend` using `text-overflow: ellipsis` */
-/* *   see: https://stackoverflow.com/a/29499408 */
-aside fieldset { min-width: 0; }
-
 aside fieldset >      * + * { margin-block-start: var(--base-spacing); }
 aside fieldset > legend + * { margin-block-start: 0; }
-
-aside fieldset legend {
-	
-	/* * TEMP: unset from `reset.css` to allow `text-overflow` */
-	display:       inline;
-	
-	max-width:     100%;
-	
-	overflow:      hidden;
-	
-	white-space:   nowrap;
-	text-overflow: ellipsis;
-	
-	box-sizing:    border-box;
-	
-}
 
 aside fieldset label {
 	

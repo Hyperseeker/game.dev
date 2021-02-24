@@ -493,7 +493,7 @@ function renderComponentsList () {
 
 	let checkboxes = [...fragment.querySelectorAll(SELECTORS.toggle)];
 
-	checkboxes.map(checkbox => {
+	checkboxes.filter(checkbox => checkbox.className !== "prequisite").map(checkbox => {
 
 		let feature = getFeature("id", checkbox.id);
 
@@ -625,13 +625,14 @@ function renderComponent (component) {
 								unique  = `${component.id}${index}`;
 							
 							return html`
-								<div class="option">
+								<label>
 									<input type="radio" name="${component.id}" id="${unique}" ${checked}>
-									<label for="${unique}">
+
+									<span>
 										${value.name}
 										<span class="complexity">×${value.complexity.toFixed(2)}</span>
-									</label>
-								</div>
+									</span>
+								</label>
 							`
 						
 						})}
@@ -682,11 +683,11 @@ function renderComponentPrequisites (component) {
 		<ul class="prequisites">
 			${component.prequisites.map(prequisite => {
 
-				let fulfilled = checkIfPrequisiteFulfilled(prequisite).toString();
+				let checked = checkIfPrequisiteFulfilled(prequisite) ? "checked" : "";
 
 				return html`
-					<li class="prequisite" is-prequisite-fulfilled="${fulfilled}" prequisite-id="${prequisite}">
-						<b>Feature required</b>: ${getFeature("id", prequisite).name}
+					<li>
+						<input type="checkbox" class="prequisite" id="${prequisite}" ${checked} disabled> <b>Feature required</b>: ${getFeature("id", prequisite).name}
 					</li>
 				`
 

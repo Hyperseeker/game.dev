@@ -593,9 +593,7 @@ function renderComponent (component) {
 				return html`
 					<div class="title">
 
-						<span class="name">
-							${component.name}
-						</span>
+						${component.name}
 
 						${random}
 

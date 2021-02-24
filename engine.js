@@ -497,7 +497,9 @@ function renderComponentsList () {
 
 		let feature = getFeature("id", checkbox.id);
 
-		checkbox.disabled = !checkIfAllPrequisitesFulfilled(feature);
+		let state = !checkIfAllPrequisitesFulfilled(feature);
+
+		checkbox.disabled = state;
 
 	});
 

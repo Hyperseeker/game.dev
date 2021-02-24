@@ -375,14 +375,9 @@ main section .component .component {
 label input + span,
       input + label { margin-inline-start: 0.75ex; }
 
-[type="checkbox"],
+label,
 [type="radio"],
-label {
-	
-	cursor: pointer;
-	
-}
-
+[type="checkbox"] { cursor: pointer; }
 
 [type="range"] { cursor: e-resize; }
 

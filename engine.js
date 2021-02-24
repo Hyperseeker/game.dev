@@ -517,7 +517,7 @@ function renderComponent (component) {
 
 	let template = component => {
 
-		let checked  = component.default ? "checked" : "";
+		let checked  = component.default ? "checked" :  "";
 		let disabled = component.default ? "" : "disabled";
 
 		let type = {
@@ -551,7 +551,7 @@ function renderComponent (component) {
 			range (component) {
 
 				let initial = 0,
-					max = component.values.length - 1;
+					max     = component.values.length - 1;
 
 				return html`
 

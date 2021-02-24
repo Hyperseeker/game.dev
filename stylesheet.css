@@ -69,7 +69,7 @@ legend {
 	background-color: var(--theme-color-primary);
 	
 	line-height:      1;
-	color:          white;
+	color:            white;
 	
 	z-index:          1;
 	
@@ -91,11 +91,12 @@ label {
 	--range-width:  calc(100% + var(--range-offset) * 2);
 	--range-margin: calc(var(--range-offset) * -1);
 	
-	width: var(--range-width);
+	width:          var(--range-width);
 	
 	margin-inline-start: var(--range-margin);
 	
 }
+
 
 /*  > SIDEBAR  */
 
@@ -208,7 +209,7 @@ aside fieldset label {
 aside fieldset label input {
 	
 	position: absolute;
-	left: var(--label-padding);
+	left:     var(--label-padding);
 	
 }
 
@@ -383,7 +384,7 @@ label {
 
 [disabled] { cursor: not-allowed; }
 
-.component label,
+.component        label,
 .component.input .title { font-weight: bold; }
 
 .component.toggle > .title ~ * { margin-inline-start: 2ex; }

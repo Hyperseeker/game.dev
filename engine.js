@@ -569,9 +569,9 @@ function renderComponent (component) {
 
 						</label>
 
-						<span class="state" state-id="${initial}">
+						<div class="state" state-id="${initial}">
 							${component.values[initial].name}
-						</span>
+						</div>
 
 					</div>
 

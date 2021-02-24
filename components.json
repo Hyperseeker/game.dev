@@ -25,6 +25,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.02
 	},
 	{
@@ -42,6 +43,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.07
 	},
 	{
@@ -60,6 +62,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.17
 	},
 	{
@@ -73,6 +76,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.03
 	},
 	{
@@ -86,6 +90,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.10
 	},
 	{
@@ -98,6 +103,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.03
 	},
 	{
@@ -114,6 +120,7 @@
 		"skills": {
 			"motion": 1.03
 		},
+		"timespan": 20,
 		"complexity": 1.10
 	},
 	{
@@ -126,6 +133,7 @@
 		"skills": {
 			"structure": 1.03
 		},
+		"timespan": 20,
 		"values": [
 			{
 				"name": "Superficial",
@@ -165,6 +173,7 @@
 		"skills": {
 			"graphics": 1.03
 		},
+		"timespan": 20,
 		"values": [
 			{
 				"name": "Text",

@@ -107,8 +107,6 @@ const TIMER = new Tock({
 
 const COMPONENTS = [];
 
-const TYPES      = [];
-
 
 // > GAMEPLAY
 
@@ -768,11 +766,6 @@ async function assignJSONToConstant (pathToJSON, constant) {
 document.addEventListener("DOMContentLoaded", async () => {
 
 	await assignJSONToConstant("components.json", COMPONENTS);
-
-	// * produce an array of unique types among the types available in the JSON document
-	let typesComputed = Array.from(new Set(COMPONENTS.map(component => component.type)));
-
-	Object.assign(TYPES, typesComputed);
 
 	Projects.new();
 

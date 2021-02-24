@@ -3,7 +3,7 @@
 		"id": "title",
 		"short": "titl",
 		"name": "Title",
-		"type": "input",
+		"type": "text",
 		"random": "generateGameName",
 		"category": "engine",
 		"subcategory": "presentation",

@@ -584,7 +584,7 @@ function renderComponent (component) {
 
 			},
 
-			input (component) {
+			text (component) {
 				
 				// * futureproofing: this ↓ does not need wrapping quotation marks around the argument
 				let placeholder = `placeholder=${component.placeholder || ""}`;

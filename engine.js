@@ -520,6 +520,10 @@ function renderComponent (component) {
 		let checked  = component.default ? "checked" :  "";
 		let disabled = component.default ? "" : "disabled";
 
+		let timespan = component.values
+							? component.values.first.timespan
+							: component.timespan;
+
 		let type = {
 			
 			toggle (component) {
@@ -532,6 +536,10 @@ function renderComponent (component) {
 						<label for="${component.id}">
 
 							${component.name}
+
+							<span class="timespan">
+								⏱ ${timespan} hours
+							</span>
 
 							<span class="complexity">
 								×${component.complexity.toFixed(2)}
@@ -562,6 +570,10 @@ function renderComponent (component) {
 						<label for="${component.id}">
 
 							${component.name}
+
+							<span class="timespan">
+								⏱ ${component.values[initial].timespan} hours
+							</span>
 
 							<span class="complexity">
 								×${component.values[initial].complexity.toFixed(2)}

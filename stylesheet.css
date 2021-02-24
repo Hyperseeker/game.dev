@@ -400,9 +400,9 @@ label,
 
 [disabled] { cursor: not-allowed; }
 
+.component .title span,
+.component  label span span {
 
-.component .complexity {
-	
 	margin-inline-start: 0.5em;
 	
 	font-weight: normal;

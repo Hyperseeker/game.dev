@@ -651,7 +651,7 @@ function renderComponent (component) {
 	};
 
 	return html`
-		<div class="component ${component.type}" component-id="${component.id}">
+		<div class="component" component-type="${component.type}" component-id="${component.id}">
 			${template(component)}
 		</div>
 	`;

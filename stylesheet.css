@@ -375,8 +375,6 @@ main section .component .component {
 label input + span,
       input + label { margin-inline-start: 0.75ex; }
 
-[type="checkbox"] { margin: 0; }
-
 [type="checkbox"],
 [type="radio"],
 label {

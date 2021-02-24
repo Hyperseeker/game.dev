@@ -211,6 +211,16 @@ aside fieldset label {
 
 }
 
+aside fieldset legend label {
+
+	display: inline-flex;
+
+	padding: 0;
+
+}
+
+aside fieldset legend label input { position: static; }
+
 aside fieldset label input {
 	
 	position: absolute;

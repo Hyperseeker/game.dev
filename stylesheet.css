@@ -198,6 +198,9 @@ aside fieldset > legend + * { margin-block-start: 0; }
 
 aside fieldset label {
 	
+	display:     flex;
+	justify-content: center;
+	
 	position:    relative;
 	
 	padding:     var(--label-padding);
@@ -205,10 +208,6 @@ aside fieldset label {
 	line-height: 1;
 	
 	z-index:     1;
-	
-	display: flex;
-	justify-content: center;
-	
 }
 
 aside fieldset label input {

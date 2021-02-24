@@ -168,7 +168,7 @@ function handleCheckboxToggle (event) {
 		componentElement = checkbox.closest(SELECTORS.component),
 
 		id               = checkbox.id,
-		type             = componentElement.className.match(TYPES.join("|"), "gi")[0],
+		type             = getFeature("id", id).type,
 
 		features         = Projects.temporary.features;
 

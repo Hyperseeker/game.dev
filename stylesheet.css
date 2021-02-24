@@ -242,7 +242,14 @@ aside ul {
 
 /*  >> Widgets  */
 
-/*  ...  */
+aside .widgets fieldset legend {
+
+    display: inline-flex;
+    justify-content: center;
+    column-gap: 0.5em;
+    flex-wrap: wrap;
+
+}
 
 
 /*  >> Tabs  */

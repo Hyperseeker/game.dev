@@ -15,6 +15,7 @@ const SELECTORS = {
 	toggle:    "[type='checkbox']",
 	range:     "[type='range']",
 	radio:     "[type='radio']",
+	text:      "[type='text']",
 
 	random:    ".random"
 	
@@ -244,6 +245,22 @@ function handleRadioSwitch (event) {
 	updateComponentDetails(radio);
 
 	renderComplexityEffort();
+
+};
+
+function handleTextInput (event) {
+
+	let text             = event.target,
+		componentElement = text.closest(SELECTORS.component);
+
+		id               = componentElement.getAttribute("component-id"),
+		value            = text.value;
+	
+	if (id === "title")	{
+
+		Projects.planned.title = value;
+
+	} else storeValueToProject(id, value);
 
 };
 
@@ -786,6 +803,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("change", `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.range}`,  handleRangeChange);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
+	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.text}`,   handleTextInput);
 
 	Gator(document).on("click",  `${SELECTORS.component} ${SELECTORS.random}`, randomizeTarget);
 

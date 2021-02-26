@@ -1,6 +1,6 @@
 // > CONSTANTS
 
-const CONTAINERS = {
+const ELEMENTS = {
 
 	main: document.querySelector("main"),
 
@@ -403,7 +403,7 @@ function renderProjectScreen () {
 
 	renderComponentsList();
 
-	CONTAINERS.main.append(html`
+	ELEMENTS.main.append(html`
 		<div class="effort">
 
 			This game would take
@@ -511,7 +511,7 @@ function renderComponentsList () {
 
 	// * STAGE V → Display Content
 
-	CONTAINERS.main.append(fragment);
+	ELEMENTS.main.append(fragment);
 
 };
 
@@ -716,7 +716,7 @@ function updateUIComponent (id, data) {
 
 	let handler = {
 
-		"time" (data) { return CONTAINERS.time.setAttribute("datetime", `${data.time}:00`); }
+		"time" (data) { return ELEMENTS.time.setAttribute("datetime", `${data.time}:00`); }
 
 	};
 

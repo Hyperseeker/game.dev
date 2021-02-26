@@ -129,6 +129,46 @@ class ProjectPlanner {
 
 };
 
+class Project {
+
+	constructor (planner) {
+
+		// * if at start there's no name to the game, assign one
+		this.title = planner.title.trim() || Common.generateGameName();
+		
+		this.features = planner.features.map(id => {
+
+			let feature = getFeature("id", id);
+
+			let timespan = feature.values 
+								? feature.values[planner.values[id]].timespan 
+								: feature.timespan;
+
+			return {
+
+				id,
+
+				timespan: {
+
+					total: timespan,
+					current: 0,
+
+					left () { return this.timespan.total - this.timespan.current }
+					
+				}
+			};
+
+		});
+
+		this.isFinished = () => this.timespan.left === 0;
+
+		this.paused    = false;
+		this.abandoned = false;
+
+	};
+
+};
+
 let Projects = {
 
 	planned:      null,

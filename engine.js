@@ -140,7 +140,7 @@ let Projects = {
 
 	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 
-	new () {
+	new      () {
 
 		Projects.planned    = new ProjectPlanner();
 

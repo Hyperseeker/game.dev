@@ -127,7 +127,7 @@ class ProjectPlanner {
 
 	}
 
-}
+};
 
 let Projects = {
 
@@ -206,7 +206,7 @@ function handleCheckboxToggle (event) {
 				
 				prequisiteElement.setAttribute("is-prequisite-fulfilled", checkIfPrequisiteFulfilled(prequisiteID));
 
-			}
+			};
 
 		};
 				
@@ -739,7 +739,7 @@ function updateUIComponent (id, data) {
 
 	return handler[id](data);
 
-}
+};
 
 
 // > UTILITY

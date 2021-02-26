@@ -130,9 +130,9 @@ class ProjectPlanner {
 
 let Projects = {
 
-	planned: null,
+	planned:      null,
 
-	list:    [],
+	list:         [],
 
 	get current   () { return Projects.list.filter(project => !project.paused && !project.abandoned) },
 
@@ -140,7 +140,7 @@ let Projects = {
 
 	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 
-	new      () {
+	new           () {
 
 		Projects.planned    = new ProjectPlanner();
 

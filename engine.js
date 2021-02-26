@@ -132,11 +132,13 @@ let Projects = {
 
 	planned: null,
 
-	current:   [],
+	list:    [],
 
-	finished:  [],
+	get current   () { return Projects.list.filter(project => !project.paused && !project.abandoned) },
 
-	abandoned: [],
+	get abandoned () { return Projects.list.filter(project => project.abandoned) },
+
+	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 
 	new () {
 

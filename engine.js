@@ -110,7 +110,7 @@ const COMPONENTS = [];
 
 // > GAMEPLAY
 
-class Project {
+class ProjectPlanner {
 
 	constructor () {
 
@@ -142,7 +142,7 @@ let Projects = {
 
 	new () {
 
-		Projects.temporary  = new Project();
+		Projects.planned    = new ProjectPlanner();
 
 		let defaultFeatures = COMPONENTS.filter(component => component.default),
 			defaultIDs      = defaultFeatures.map(component => component.id);

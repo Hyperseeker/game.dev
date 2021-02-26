@@ -130,7 +130,7 @@ class Project {
 
 let Projects = {
 
-	temporary: null,
+	planned: null,
 
 	current:   [],
 
@@ -145,9 +145,9 @@ let Projects = {
 		let defaultFeatures = COMPONENTS.filter(component => component.default),
 			defaultIDs      = defaultFeatures.map(component => component.id);
 
-		Projects.temporary.features = defaultIDs;
+		Projects.planned.features = defaultIDs;
 
-		Projects.temporary.values = Object.fromEntries(
+		Projects.planned.values = Object.fromEntries(
 			defaultFeatures.filter(feature => feature.values).map(feature => [feature.id, 0])
 		);
 
@@ -168,7 +168,7 @@ function handleCheckboxToggle (event) {
 		id               = checkbox.id,
 		type             = getFeature("id", id).type,
 
-		features         = Projects.temporary.features;
+		features         = Projects.planned.features;
 
 	features.toggle(id);
 
@@ -281,7 +281,7 @@ function randomizeTarget (event) {
 function storeValueToProject (id, value) {
 
 	// ? set value to `null` instead?
-	return value === null ? delete Projects.temporary.values[id] : Projects.temporary.values[id] = value ;
+	return value === null ? delete Projects.planned.values[id] : Projects.planned.values[id] = value ;
 
 };
 
@@ -354,7 +354,7 @@ function updateComponentDetails (subelement) {
 
 function calculateProjectComplexity () {
 
-	let toggled = Projects.temporary.features;
+	let toggled = Projects.planned.features;
 
 	let base_complexity_parsed = BASE_COMPLEXITY / 100;
 
@@ -371,9 +371,9 @@ function calculateProjectComplexity () {
 
 			toggle () { return feature.complexity },
 
-			range  () { return feature.values ? feature.values[Projects.temporary.values[id]].complexity : feature.complexity },
+			range  () { return feature.values ? feature.values[Projects.planned.values[id]].complexity : feature.complexity },
 
-			radio  () { return feature.values ? feature.values[Projects.temporary.values[id]].complexity : feature.complexity }
+			radio  () { return feature.values ? feature.values[Projects.planned.values[id]].complexity : feature.complexity }
 
 		};
 
@@ -505,7 +505,7 @@ function renderComponentsList () {
 
 	let titleInput = fragment.querySelector("[component-id='title'] input");
 
-	titleInput.value = Projects.temporary.title;
+	titleInput.value = Projects.planned.title;
 
 	// * STAGE V → Display Content
 
@@ -736,7 +736,7 @@ function moveChildComponentToParentElement (component, wrapper) {
 
 function checkIfPrequisiteFulfilled (prequisite) {
 
-	return Projects.temporary.features.includes(prequisite);
+	return Projects.planned.features.includes(prequisite);
 
 };
 

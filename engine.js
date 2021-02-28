@@ -136,35 +136,62 @@ class Project {
 
 		// * if at start there's no name to the game, assign one
 		this.title = planner.title.trim() || Common.generateGameName();
-		
-		this.features = planner.features.map(id => {
 
-			let feature = getFeature("id", id);
+		this.features = {
 
-			let timespan = feature.values 
-								? feature.values[planner.values[id]].timespan 
-								: feature.timespan;
+			get current () {
 
-			return {
+				// * map entries of `[key, feature]` to return feature
+				let features = Object.entries(this.list).map(entry => entry.last);
 
-				id,
+				return features.find(feature => feature.timespan.left() > 0);
 
-				timespan: {
+			},
 
-					total: timespan,
-					current: 0,
+			list: planner.features.map(id => {
 
-					left () { return this.timespan.total - this.timespan.current }
-					
-				}
-			};
+				let feature  = getFeature("id", id);
+	
+				let timespan = feature.values 
+									? feature.values[planner.values[id]].timespan 
+									: feature.timespan;
+	
+				return {
+	
+					id,
+	
+					timespan: {
+	
+						current:   0,
+						total:     timespan,
+	
+						left       () { return this.total - this.current },
+						asFraction () { return this.current / this.total }
+						
+					}
+	
+				};
+	
+			})
 
-		});
+		};
 
-		this.isFinished = () => this.timespan.left === 0;
+		this.isFinished  = () => this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0;
 
-		this.paused    = false;
-		this.abandoned = false;
+		this.paused      = false;
+		this.abandoned   = false;
+
+		this.advance     = () => {
+
+			let currentFeature = this.features.current,
+				timespan       = currentFeature.timespan;
+
+			timespan.current = Math.min(
+				timespan.total, 
+				timespan.current + GAMEPLAY.Time.getTrueTempo()
+			);
+
+		};
 
 	};
 

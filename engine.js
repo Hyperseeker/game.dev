@@ -262,19 +262,13 @@ function handleCheckboxToggle (event) {
 		
 		toggle.disabled = !checkIfAllPrequisitesFulfilled(component);
 
-		let prequisitesElement = componentElement.querySelector(".prequisites");
+		let prequisiteElements = componentElement.querySelector(".prequisites").querySelectorAll(".prequisite");
 
-		if (prequisitesElement) {
+		for (let element of prequisiteElements) {
 
-			let prequisiteElementsList = prequisitesElement.querySelectorAll(".prequisite");
-
-			for (prequisiteElement of prequisiteElementsList) {
-
-				let prequisiteID = prequisiteElement.getAttribute("prequisite-id");
-				
-				prequisiteElement.setAttribute("is-prequisite-fulfilled", checkIfPrequisiteFulfilled(prequisiteID));
-
-			};
+			let prequisiteID = element.id;
+			
+			element.checked = checkIfPrequisiteFulfilled(prequisiteID);
 
 		};
 				

@@ -363,7 +363,6 @@ function randomizeTarget (event) {
 
 function storeValueToProject (id, value) {
 
-	// ? set value to `null` instead?
 	return value === null ? delete Projects.planned.values[id] : Projects.planned.values[id] = value ;
 
 };

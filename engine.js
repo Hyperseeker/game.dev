@@ -203,7 +203,7 @@ let Projects = {
 
 	list:         [],
 
-	get current   () { return Projects.list.filter(project => !project.paused && !project.abandoned) },
+	get current   () { return Projects.list.filter(project => !project.isFinished() && !project.paused && !project.abandoned) },
 
 	get abandoned () { return Projects.list.filter(project => project.abandoned) },
 

@@ -80,7 +80,7 @@ const GAMEPLAY = {
 
 			GAMEPLAY.Time.current += GAMEPLAY.Time.getTrueTempo();
 
-			// TODO: advance progression of project work
+			Projects.advance();
 
 			// TODO: advance skills if working on a project
 
@@ -233,6 +233,9 @@ let Projects = {
 
 		return Projects.list.last = project;
 
+	},
+
+	advance       () { return Projects.current.forEach(project => project.advance()) }
 
 };
 

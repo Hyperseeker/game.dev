@@ -255,6 +255,8 @@ function handleCheckboxToggle (event) {
 
 	};
 
+	// TODO: ↓ `updateUIComponent()` → `prequisites`
+
 	COMPONENTS.filter(component => component.prequisites && component.prequisites.includes(id)).map(component => {
 
 		let componentElement = document.querySelector(`[component-id="${component.id}"]`),

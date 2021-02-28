@@ -42,7 +42,6 @@ const GAMEPLAY = {
 		current: 0,
 
 		paused: false,
-		setPauseState (state) { GAMEPLAY.Time.paused = state },
 
 		tempo: 1,
 		tempos: {

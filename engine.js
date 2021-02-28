@@ -209,7 +209,7 @@ let Projects = {
 
 	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 
-	new           () {
+	plan          () {
 
 		Projects.planned    = new ProjectPlanner();
 
@@ -859,7 +859,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	await assignJSONToConstant("components.json", COMPONENTS);
 
-	Projects.new();
+	Projects.plan();
 
 	TIMER.start();
 

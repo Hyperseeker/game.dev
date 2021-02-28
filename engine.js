@@ -213,7 +213,7 @@ let Projects = {
 
 		Projects.planned    = new ProjectPlanner();
 
-		let defaultFeatures = COMPONENTS.filter(component => component.default),
+		let defaultFeatures = COMPONENTS.filter(component   => component.default),
 			defaultIDs      = defaultFeatures.map(component => component.id);
 
 		Projects.planned.features = defaultIDs;

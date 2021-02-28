@@ -53,6 +53,8 @@ const GAMEPLAY = {
 
 		},
 		setTempo (id) { GAMEPLAY.Time.tempo = GAMEPLAY.Time.tempos[id] },
+		getTrueTempo () { return GAMEPLAY.Time.tempo / TIMER_RESOLUTION },
+		// TODO: ↑ come up with a better name
 
 		schedule: [
 
@@ -76,7 +78,7 @@ const GAMEPLAY = {
 
 			if (GAMEPLAY.Time.paused) return;
 
-			GAMEPLAY.Time.current += GAMEPLAY.Time.tempo / TIMER_RESOLUTION;
+			GAMEPLAY.Time.current += GAMEPLAY.Time.getTrueTempo();
 
 			// TODO: advance progression of project work
 

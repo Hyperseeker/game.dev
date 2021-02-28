@@ -224,7 +224,15 @@ let Projects = {
 
 		renderProjectScreen();
 		
-	}
+	},
+
+	start         () {
+
+		let planner = Projects.planned,
+			project = new Project(planner);
+
+		return Projects.list.last = project;
+
 
 };
 

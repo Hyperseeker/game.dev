@@ -252,11 +252,24 @@ aside ul {
 
 /*  >> Widgets  */
 
+aside .widgets {
+
+	display: flex;
+	justify-content: center;
+
+}
+
 aside .widgets fieldset legend {
 
     display:    inline-flex;
     column-gap: 0.5em;
-    flex-wrap: wrap;
+    flex-wrap:  wrap;
+
+}
+
+aside .widget {
+
+	width: clamp(15ex, 10vw, calc(var(--sidebar-width-max) - var(--sidebar-padding) * 2));
 
 }
 

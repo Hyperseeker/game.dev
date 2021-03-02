@@ -3,6 +3,7 @@
 const ELEMENTS = {
 
 	main: document.querySelector("main"),
+	sidebar: document.querySelector("aside"),
 
 	time: document.querySelector("aside time")
 

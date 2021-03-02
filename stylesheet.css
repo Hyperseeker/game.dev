@@ -278,13 +278,13 @@ aside .widget {
 
 aside .tab {
 
-aside .tab label {
 	--tab-padding: 1em;
 	
-	justify-content: center;
 	display: flex;
 
 }
+
+aside .tab label {
 	
 	position:    relative;
 	

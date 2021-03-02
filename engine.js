@@ -34,7 +34,8 @@ const GAMEPLAY = {
 	// TODO: create section for changing options // POST-ALPHA
 	Options: {
 
-		autogenerateGameName: false
+		autogenerateGameName: false,
+		startPaused:          true
 
 	},
 

@@ -42,6 +42,8 @@ const GAMEPLAY = {
 	Time: {
 
 		current: 0,
+		getFullHour () { return GAMEPLAY.Time.current % 24 },
+
 		pause: {
 
 			state:    false,
@@ -107,7 +109,7 @@ const GAMEPLAY = {
 
 			// TODO: advance skills if working on a project
 
-			let fullHours  =  Math.floor(GAMEPLAY.Time.current % 24),
+			let fullHours  =  Math.floor(GAMEPLAY.Time.getFullHour()),
 				parsedTime = `${fullHours}`.padStart(2, "0");
 
 			updateUIComponent("time", { time: parsedTime });

@@ -75,8 +75,6 @@ legend {
 	
 	padding:          var(--label-padding);
 	
-	border-radius:    var(--border-radius);
-	
 	background-color: var(--theme-color-primary);
 	
 	line-height:      1;
@@ -123,6 +121,16 @@ label {
 	
 	margin-inline-start: var(--range-margin);
 	
+}
+
+input,
+fieldset,
+legend,
+label {
+
+	/* * TEMP: override `reset.css` styles */
+	border-radius: var(--border-radius) !important;
+
 }
 
 

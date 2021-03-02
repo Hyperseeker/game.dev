@@ -98,6 +98,7 @@ const GAMEPLAY = {
 			"sleep"
 
 		],
+		getCurrentPreoccupation () { return GAMEPLAY.Time.schedule[GAMEPLAY.Time.getFullHour() - 1] },
 
 		progress () {
 
@@ -105,7 +106,7 @@ const GAMEPLAY = {
 
 			GAMEPLAY.Time.current += GAMEPLAY.Time.getTrueTempo();
 
-			Projects.advance();
+			if (GAMEPLAY.Time.getCurrentPreoccupation() === "project") Projects.advance();
 
 			// TODO: advance skills if working on a project
 

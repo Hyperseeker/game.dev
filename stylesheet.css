@@ -231,7 +231,7 @@ aside fieldset legend label {
 
 aside fieldset legend label input { position: static; }
 
-aside fieldset label input {
+aside label input {
 	
 	position: absolute;
 	left:     var(--label-padding);

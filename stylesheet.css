@@ -24,6 +24,8 @@
 	
 	/*  >> Sizing */
 	
+	--sidebar-width-min: 20ex;
+	--sidebar-width-max: 15vw;
 	--sidebar-padding: 1.25vw;
 	
 	--border-radius:   0.25em;
@@ -133,8 +135,8 @@ aside {
 	align-items:    center;
 	flex:           0 1 20%;
 	
-	min-width:      10em;
-	max-width:      15vw;
+	min-width:      var(--sidebar-width-min);
+	max-width:      var(--sidebar-width-max);
 	
 	padding:        var(--sidebar-padding);
 	

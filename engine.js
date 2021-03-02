@@ -474,45 +474,24 @@ function updateComponentDetails (subelement) {
 
 // > CALCULATIONS
 
-function calculateProjectComplexity () {
+function calculateProjectDuration () {
 
 	let toggled = Projects.planned.features;
 
-	let base_complexity_parsed = BASE_COMPLEXITY / 100;
+	if (!toggled.length) return 0;
 
-	if (!toggled.length) return base_complexity_parsed;
+	let duration = toggled.map(id => {
 
-	let calculatedComplexity = toggled.map(id => {
+		let feature = getFeature("id", id);
 
-		let feature = COMPONENTS.filter(component => checkIfAllPrequisitesFulfilled(component)).find(component => component.id === id);
-		
-		// * i.e. if `feature` is not on the list of components the prequisites for which are not fulfilled → are not workable
-		if (!feature) return base_complexity_parsed;
-
-		let handler = {
-
-			toggle () { return feature.complexity },
-
-			range  () { return feature.values ? feature.values[Projects.planned.values[id]].complexity : feature.complexity },
-
-			radio  () { return feature.values ? feature.values[Projects.planned.values[id]].complexity : feature.complexity }
-
-		};
-
-		return handler[feature.type]();
+		return feature.values 
+					? feature.values[Projects.planned.values[id]].timespan 
+					: feature.timespan
 
 
-	}).reduce((accumulator, complexity) => accumulator *= complexity);
+	}).reduce((accumulator, timespan) => accumulator += timespan);
 
-	return base_complexity_parsed * calculatedComplexity;
-
-};
-
-function calculateDevelopmentTime () {
-
-	let complexity = calculateProjectComplexity();
-
-	return Math.ceil(complexity.toFixed(2) * BASE_TIME_TO_DEVELOP);
+	return duration;
 
 };
 
@@ -527,7 +506,7 @@ function renderProjectScreen () {
 		<div class="effort">
 
 			This game would take
-			<div class="hours">${calculateDevelopmentTime()}</div>
+			<div class="hours">${calculateProjectDuration()}</div>
 			hours to develop
 
 		</div>
@@ -828,7 +807,7 @@ function renderComponentPrequisites (component) {
 
 function renderComplexityEffort () {
 
-	document.querySelector("main .hours").innerText = calculateDevelopmentTime();
+	document.querySelector("main .hours").innerText = calculateProjectDuration();
 
 };
 

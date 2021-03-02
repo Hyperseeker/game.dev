@@ -254,8 +254,7 @@ aside ul {
 
 aside .widgets fieldset legend {
 
-    display: inline-flex;
-    justify-content: center;
+    display:    inline-flex;
     column-gap: 0.5em;
     flex-wrap: wrap;
 

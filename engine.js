@@ -2,10 +2,10 @@
 
 const ELEMENTS = {
 
-	main: document.querySelector("main"),
+	main:    document.querySelector("main"),
 	sidebar: document.querySelector("aside"),
 
-	time: document.querySelector("aside time")
+	time:    document.querySelector("aside time")
 
 };
 

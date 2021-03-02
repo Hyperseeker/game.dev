@@ -289,9 +289,9 @@ aside .tab label {
 	position:    relative;
 	
 	flex:        1;
-	
-	/* * sets total height of a tab */
-	line-height: 4;
+
+	padding: 1.25em 0;
+	padding-inline-start: clamp(var(--tab-padding), 5vw, 30%);
 	
 	z-index:     1;
 	

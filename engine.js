@@ -170,6 +170,7 @@ class Project {
 				// * map entries of `[key, feature]` to return feature
 				let features = Object.entries(this.list).map(entry => entry.last);
 
+				// * will return first unfinished feature or `undefined`
 				return features.find(feature => feature.timespan.left() > 0);
 
 			},

@@ -947,6 +947,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	TIMER.start();
 
+
+	// >> Render Views
+
+	// TODO: render each view and append them to the appropriate
+
+
+	// >> Event Piping
+
 	Gator(document).on("click",  `${SELECTORS.component} ${SELECTORS.random}`, randomizeTarget);
 
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);

@@ -481,6 +481,7 @@ time {
 
 	display: table;
 	
+	/* TODO: center within `fieldset` using flex */
 	margin: 0 auto;
 	
 }

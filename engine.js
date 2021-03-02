@@ -29,6 +29,25 @@ const BASE_TIME_TO_DEVELOP = 120; // * hours, for 100 complexity, assuming 4hrs/
 
 const TIMER_RESOLUTION     = 16;
 
+const PLAYER = {
+
+	skills: {
+
+		// >>> Interactions & Mechanics
+		motion:    1,
+		physics:   1,
+
+		// >>> Visuals & Graphics
+		graphics:  1,
+		animation: 1,
+
+		// >>> Sound & Noises
+		sound:     1
+
+	}
+
+};
+
 const GAMEPLAY = {
 
 	// TODO: create section for changing options // POST-ALPHA

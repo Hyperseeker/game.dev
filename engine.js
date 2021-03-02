@@ -42,8 +42,12 @@ const GAMEPLAY = {
 	Time: {
 
 		current: 0,
+		pause: {
 
-		paused: false,
+			state:    false,
+			isForced: false
+
+		},
 
 		tempo: 1,
 		tempos: {
@@ -78,7 +82,7 @@ const GAMEPLAY = {
 
 		progress () {
 
-			if (GAMEPLAY.Time.paused) return;
+			if (GAMEPLAY.Time.pause.state) return;
 
 			GAMEPLAY.Time.current += GAMEPLAY.Time.getTrueTempo();
 
@@ -354,7 +358,7 @@ function handlePauseStateChange (event) {
 
 	let checkbox = event.target;
 
-	return GAMEPLAY.Time.paused = checkbox.checked;
+	return GAMEPLAY.Time.pause.state = checkbox.checked;
 
 };
 

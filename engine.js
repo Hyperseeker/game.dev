@@ -138,6 +138,18 @@ const COMPONENTS = [];
 
 // > GAMEPLAY
 
+class Feature {
+
+	constructor (source) {
+
+		Object.assign(this, source);
+
+	};
+
+	get finished () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0 };
+
+};
+
 class ProjectPlanner {
 
 	constructor () {

@@ -317,6 +317,8 @@ aside .tab label span::after {
 	
 }
 
+aside .tab input { left: clamp(var(--tab-padding), 2.5vw, 30%); }
+
 
 /*  > MAIN  */
 

@@ -953,11 +953,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.text}`,   handleTextInput);
 
+	Gator(document).on("input",  `[name="tempo"]`,                             handleTempoChange);
 
-	Gator(document).on("input",  `[name="tempo"]`,  handleTempoChange);
+	Gator(document).on("input",  `[name="paused"]`,                            handlePauseStateChange);
+
+
 	// >> Optional Starting Settings
 
-	Gator(document).on("input",  `[name="paused"]`, handlePauseStateChange);
 	// *  trigger an `input` event on the pause checkbox, thus forcing the game to start off paused
 	if (GAMEPLAY.Options.startPaused) document.querySelector("[name='paused']").click();
 

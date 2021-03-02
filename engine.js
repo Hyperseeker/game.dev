@@ -947,8 +947,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	TIMER.start();
 
-	Gator(document).on("change", `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
 	Gator(document).on("click",  `${SELECTORS.component} ${SELECTORS.random}`, randomizeTarget);
+
+	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.toggle}`, handleCheckboxToggle);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.range}`,  handleRangeChange);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.radio}`,  handleRadioSwitch);
 	Gator(document).on("input",  `${SELECTORS.component} ${SELECTORS.text}`,   handleTextInput);

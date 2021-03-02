@@ -64,19 +64,36 @@ const GAMEPLAY = {
 
 		schedule: [
 
-			[ "sleep",   6 ],
+			"sleep",
+			"sleep",
+			"sleep",
+			"sleep",
+			"sleep",
+			"sleep",
 
-			[ "commute", 1 ],
+			"commute",
 
-			[ "work",    8 ],
+			"work",
+			"work",
+			"work",
+			"work",
+			"work",
+			"work",
+			"work",
+			"work",
 
-			[ "commute", 1 ],
+			"commute",
 
-			[ "game",    4 ],
+			"project",
+			"project",
+			"project",
+			"project",
 
-			[ "rest",    2 ],
+			"rest",
+			"rest",
 
-			[ "sleep",   2 ]
+			"sleep",
+			"sleep"
 
 		],
 

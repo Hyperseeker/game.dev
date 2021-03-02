@@ -101,37 +101,25 @@
 
 			<ul>
 
-				<li class="tab">
+				<li class="tab" view="overview">
 
 					<label>
 
-						<input type="radio" name="tab" id="tab1" checked>
+						<input type="radio" name="tab" target="overview">
 
-						<span>Tab 1</span>
+						<span>Overview</span>
 
 					</label>
 
 				</li>
 
-				<li class="tab">
+				<li class="tab" view="planner">
 
 					<label>
 
-						<input type="radio" name="tab" id="tab2">
+						<input type="radio" name="tab" target="planner" checked>
 
-						<span>Tab 2</span>
-
-					</label>
-
-				</li>
-
-				<li class="tab">
-
-					<label>
-
-						<input type="radio" name="tab" id="tab3">
-
-						<span>Tab 3</span>
+						<span>New project</span>
 
 					</label>
 
@@ -148,9 +136,9 @@
 	
 	<main>
 
-		<article class="tab overview"></article>
+		<article class="view" view="overview"></article>
 
-		<article class="tab newProject"></article>
+		<article class="view" view="planner"></article>
 
 	</main>
 

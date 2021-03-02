@@ -213,6 +213,8 @@ class Project {
 			let currentFeature = this.features.current,
 				timespan       = currentFeature.timespan;
 
+			// TODO: use skill modifiers and project multiplicity modifier in calculations of advancement
+
 			timespan.current = Math.min(
 				timespan.total, 
 				timespan.current + GAMEPLAY.Time.getTrueTempo()

@@ -876,6 +876,8 @@ async function assignJSONToConstant (pathToJSON, constant) {
 
 document.addEventListener("DOMContentLoaded", async () => {
 
+	// >> Assemble Data
+
 	await assignJSONToConstant("components.json", COMPONENTS);
 
 	Projects.plan();

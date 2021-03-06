@@ -160,7 +160,13 @@ const VIEWS = {
 
 		planner  () {
 
-			// * use `Projects.planned` to derive state
+			let state = Projects.planned;
+
+			let template = renderProjectScreen();
+
+			// TODO: use `state` to render `template` accordingly
+
+			VIEWS.Elements.planner.append(template);
 			
 		},
 

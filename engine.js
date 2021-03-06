@@ -835,13 +835,16 @@ function renderComponentDescription (component) {
 						? [component.description].flat().map(line => html`<p>${line}</p>`)
 						: component.values
 							? component.values[0].description
-							: DEFAULT_DESCRIPTION;
+							: "";
 
-	return html`
-		<div class="description">
-			${description}
-		</div>
-	`;
+	
+	return description.length 
+			? html`
+				<div class="description">
+					${description}
+				</div>
+			`
+			: "";
 
 };
 

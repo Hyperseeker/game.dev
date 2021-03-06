@@ -1,5 +1,7 @@
 // > CONSTANTS
 
+const TIMER_RESOLUTION = 16;
+
 const ELEMENTS = {
 
 	main:    document.querySelector("main"),
@@ -21,8 +23,6 @@ const SELECTORS = {
 	random:    ".random"
 	
 };
-
-const TIMER_RESOLUTION     = 16;
 
 const PLAYER = {
 

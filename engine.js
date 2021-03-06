@@ -953,7 +953,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 	// >> Render Views
 
-	// TODO: render each view and append them to the appropriate
+	VIEWS.render.overview();
+	VIEWS.render.planner();
 
 
 	// >> Event Piping

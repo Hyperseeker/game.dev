@@ -2,6 +2,9 @@
 
 const TIMER_RESOLUTION = 16;
 
+
+// >> Data
+
 const ELEMENTS = {
 
 	main:    document.querySelector("main"),

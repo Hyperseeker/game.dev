@@ -525,3 +525,16 @@ time::after {
 	padding-inline-start: 0;
 	
 }
+
+
+/*  > VIEWS  */
+
+[view] { display: none; }
+
+[display="overview"] [view="overview"],
+[display="planner"]  [view="planner"],
+[display="project"]  [view="project"] {
+
+	display: initial;
+
+}

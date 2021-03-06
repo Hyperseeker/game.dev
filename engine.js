@@ -180,7 +180,7 @@ const TIMER = new Tock({
 });
 
 
-// > PLACEHOLDERS
+// >> Placeholders
 
 const COMPONENTS = [];
 

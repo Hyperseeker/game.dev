@@ -561,9 +561,9 @@ function calculateProjectDuration () {
 
 function renderProjectScreen () {
 
-	renderComponentsList();
+	let fragment = renderComponentsList();
 
-	ELEMENTS.main.append(html`
+	fragment.append(html`
 		<div class="effort">
 
 			This game would take
@@ -572,6 +572,8 @@ function renderProjectScreen () {
 
 		</div>
 	`);
+
+	return fragment;
 
 };
 
@@ -671,7 +673,7 @@ function renderComponentsList () {
 
 	// * STAGE V → Display Content
 
-	ELEMENTS.main.append(fragment);
+	return fragment;
 
 };
 

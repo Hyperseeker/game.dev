@@ -473,6 +473,15 @@ function handlePauseStateChange (event) {
 
 };
 
+function handleTabSwitch (event) {
+
+	let tab = event.target,
+		view = tab.getAttribute("target");
+
+	document.body.setAttribute("display", view);
+
+};
+
 function randomizeTarget (event) {
 
 	let random           = event.target,
@@ -996,6 +1005,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("input",  `[name="tempo"]`,                             handleTempoChange);
 
 	Gator(document).on("input",  `[name="paused"]`,                            handlePauseStateChange);
+
+	Gator(document).on("input",  `[name="tab"]`,                               handleTabSwitch);
 
 
 	// >> Optional Starting Settings

@@ -185,6 +185,13 @@ const TIMER = new Tock({
 
 });
 
+const ID = new Bronze({
+	
+	pid:  PROCESS_ID,
+	name: PROCESS_NAME
+
+});
+
 
 // >> Placeholders
 

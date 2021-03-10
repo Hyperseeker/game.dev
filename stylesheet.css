@@ -550,3 +550,63 @@ time::after {
 	display: initial;
 
 }
+
+
+/*  > PROJECTS  */
+
+.project.finished [toggle] { display: none; }
+
+.project [type="checkbox"] {
+
+	position: absolute;
+	top:      0;
+	left:     0;
+
+	visibility: hidden;
+
+	pointer-events: none;
+ 
+}
+
+.project [toggle] {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width:  2em;
+	height: 2em;
+
+	border: 1px solid;
+	border-radius: var(--border-radius);
+
+	background-color: var(--theme-color-text);
+
+	padding: 0.5em;
+
+	box-sizing: border-box;
+
+}
+
+.project                             [toggle="pause"] svg { fill: var(--theme-color-background); }
+
+.project                             [toggle="pause"] .resume { display: none;    }
+
+.project [type="checkbox"]:checked + [toggle="pause"] .pause  { display: none;    }
+.project [type="checkbox"]:checked + [toggle="pause"] .resume { display: initial; }
+
+.project .timespan {
+	
+	/* * temporary spacing */
+	float: right;
+
+	font-size: 1.25em;
+
+}
+
+.project .timespan .separator {
+
+	font-size: 0.85em;
+	color: darkgray;
+
+}

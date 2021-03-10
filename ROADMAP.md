@@ -17,3 +17,10 @@
   - [x] game name can be randomized
 - [x] time passes
   - [x] the passing of time moves Project development further
+- [ ] Projects can be overseen
+  - [ ] Projects can be paused and resumed
+  - [ ] Projects can be abandoned
+  - [ ] Projects can be published
+- [ ] Views are implemented
+  - [x] switching tabs switches Views
+  - [ ] Views update correctly over time

@@ -142,8 +142,8 @@ const VIEWS = {
 
 	Elements: {
 
-		overview: document.querySelector("main [view='overview']"),
-		planner:  document.querySelector("main [view='planner']")
+		overview: document.querySelector("[view='overview']"),
+		planner:  document.querySelector("[view='planner']")
 
 	},
 

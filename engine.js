@@ -286,6 +286,8 @@ class Project {
 
 		this.advance     = () => {
 
+			if (this.paused) return;
+
 			let currentFeature = this.features.current,
 				timespan       = currentFeature.timespan;
 

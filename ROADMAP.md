@@ -16,4 +16,4 @@
   - [x] time to develop is calculated correctly
   - [x] game name can be randomized
 - [x] time passes
-  - [ ] the passing of time moves project development further
+  - [x] the passing of time moves Project development further

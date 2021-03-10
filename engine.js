@@ -283,6 +283,7 @@ class Project {
 
 		this.paused      = false;
 		this.abandoned   = false;
+		this.published   = false;
 
 		this.advance     = () => {
 

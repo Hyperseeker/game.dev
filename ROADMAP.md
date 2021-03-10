@@ -1,6 +1,6 @@
-# Alpha Release
 
 - [x] features render and display correctly
+# v0.1.0
   - [x] `toggle` / checkbox
   - [x] `range`
   - [x] `input` / text field

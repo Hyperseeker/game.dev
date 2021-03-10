@@ -234,6 +234,8 @@ class Project {
 
 	constructor (planner) {
 
+		this.id = ID.generate();
+
 		// * if at start there's no name to the game, assign one
 		this.title = planner.title.trim() || Common.generateGameName();
 

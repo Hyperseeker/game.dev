@@ -322,7 +322,6 @@ let Projects = {
 
 	get abandoned () { return Projects.list.filter(project => project.abandoned) },
 
-	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 	get finished  () { return Projects.list.filter(project => project.finished) },
 
 	get published () { return Projects.list.filter(project => project.published) },

@@ -6,6 +6,12 @@
 const TIMER_RESOLUTION =  16;
 
 
+// >> ID Generator
+
+const PROCESS_ID       =  42;
+const PROCESS_NAME     = "project";
+
+
 // > DATA
 
 const ELEMENTS = {

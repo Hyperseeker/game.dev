@@ -175,6 +175,8 @@ const VIEWS = {
 
 			// TODO: use `state` to render `template` accordingly
 
+			VIEWS.Elements.planner.innerHTML = "";
+			
 			VIEWS.Elements.planner.append(template);
 			
 		},

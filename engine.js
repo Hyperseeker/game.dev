@@ -1,6 +1,9 @@
 // > CONSTANTS
 
-const TIMER_RESOLUTION = 16;
+
+// >> Timer
+
+const TIMER_RESOLUTION =  16;
 
 
 // > DATA

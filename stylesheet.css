@@ -356,7 +356,7 @@ main article h1 + section { margin-block-start: 1em; }
 
 main section { /* ... */ }
 
-main section + section { margin-block-start: 2em; }
+main section + section { margin-block-start: 3em; }
 
 main section h2 {
 	

@@ -6,10 +6,10 @@
   - [x] `range`
   - [x] `input` / text field
   - [x] `radio` / choice of one
-  - [ ] time to develop is calculated correctly
 - [ ] Player is able to create new Projects from a set of Features
   - [x] Features may require prequisite Features
     - [x] if prequisite Feature is removed from Project, Features that depend on it do not count toward timespan calculations and will not be part of the game
+  - [x] time to develop is calculated correctly
   - [x] game name can be randomized
 - [x] time passes
   - [ ] the passing of time moves project development further

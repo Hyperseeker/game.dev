@@ -325,6 +325,8 @@ let Projects = {
 	get finished  () { return Projects.list.filter(project => project.isFinished()) },
 	get finished  () { return Projects.list.filter(project => project.finished) },
 
+	get published () { return Projects.list.filter(project => project.published) },
+
 	plan          () {
 
 		Projects.planned    = new ProjectPlanner();

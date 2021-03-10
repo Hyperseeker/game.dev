@@ -77,6 +77,7 @@ legend {
 	position:         relative;
 	
 	padding:          var(--label-padding);
+	padding-block-end: calc(var(--label-padding) * 0.66); /* * fixes bottom padding extending the container further than is expected */
 	
 	background-color: var(--theme-color-primary);
 	

@@ -285,6 +285,14 @@ class Project {
 		this.abandoned   = false;
 		this.published   = false;
 
+		this.timespan    = {
+
+			get current () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.total() - feature.timespan.left()) },
+
+			get total   () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.total()) }
+
+		};
+
 		this.advance     = () => {
 
 			if (this.paused) return;

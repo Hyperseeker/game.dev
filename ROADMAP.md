@@ -1,3 +1,7 @@
+# v0.2.0
+
+- [ ] Player's Skills affect development process
+  - [ ] working on a Project improves Player's Skill in a particular area
 
 # v0.1.0
 
@@ -13,5 +17,3 @@
   - [x] game name can be randomized
 - [x] time passes
   - [ ] the passing of time moves project development further
-- [ ] Player's skills affect development process
-  - [ ] working on a game improves Player's skill in a particular area

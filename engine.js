@@ -165,6 +165,55 @@ const VIEWS = {
 			// *  2. sort projects by category, delimited by a header (current → finished → abandoned)
 			// *  3. render each project element with progress etc. (use different function → `Projects.render()`?)
 
+			const CATEGORIES = [
+				"current", 
+				"finished", 
+				"published",
+				"abandoned" 
+			];
+
+			let projects = Object.fromEntries(CATEGORIES.map(category => [ category, Projects[category] ]));
+
+			let template = html`
+
+				<section>
+
+					<h1>Current</h1>
+
+					...
+
+					<section>
+
+						<h2>Finished</h2>
+
+						...
+
+					</section>
+
+				</section>
+
+				<section>
+
+					<h1>Published</h1>
+
+					...
+
+				</section>
+
+				<section>
+
+					<h1>Abandoned</h1>
+
+					...
+
+				</section>
+
+			`;
+
+			VIEWS.Elements.overview.innerHTML = "";
+
+			VIEWS.Elements.overview.append(template);
+
 		},
 
 		planner  () {

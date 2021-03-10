@@ -52,6 +52,9 @@ body {
 	
 }
 
+:first-child { margin-block-start: 0; }
+:last-child  { margin-block-end:   0; }
+
 aside,
 main { flex: 1; }
 

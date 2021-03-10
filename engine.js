@@ -321,6 +321,55 @@ class Project {
 	};
 
 	get finished () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0; };
+
+	static render (project) {
+
+		if (!project) throw "Project.render(): function requires `project`";
+
+		let pause = html`
+			<svg class="pause" xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 847 847">
+				<path d="M62 777V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H118c-31 0-56-25-56-57zm419 0V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H537c-31 0-56-25-56-57z"/>
+			</svg>
+		`;
+
+		let resume = html`
+			<svg class="resume" xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 207 240">
+				<path d="M196 101L33 3C21-5 0 3 0 22v196c0 19 21 27 33 19l163-98c14-9 14-29 0-38z"/>
+			</svg>
+		`;
+
+		let template = html`
+
+			<fieldset class="project">
+
+			<legend>${project.title}</legend>
+
+			<label>
+
+				<input type="checkbox" project="${project.id}">
+
+				<div toggle="pause">
+
+					${pause}
+
+					${resume}
+					
+				</div>
+
+			</label>
+
+			<span class="timespan">
+				⏱ <span class="current">${project.timespan.current}</span> <span class="separator">/</span> <span class="total">${project.timespan.total}</span>
+			</span>
+
+			</fieldset>
+
+		`;
+
+		return template;
+
+	}
+
 };
 
 let Projects = {

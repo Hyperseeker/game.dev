@@ -3,7 +3,7 @@
 const TIMER_RESOLUTION = 16;
 
 
-// >> Data
+// > DATA
 
 const ELEMENTS = {
 

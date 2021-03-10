@@ -1,14 +1,15 @@
 
-- [x] features render and display correctly
 # v0.1.0
+
+- [x] Features render and display correctly
   - [x] `toggle` / checkbox
   - [x] `range`
   - [x] `input` / text field
   - [x] `radio` / choice of one
-- [ ] Player is able to create new games from a set of features
-  - [x] features may require prequisite features
-    - [x] if prequisite feature is removed from project, features that depend on it do not count toward effort calculations and will not be part of the game
   - [ ] time to develop is calculated correctly
+- [ ] Player is able to create new Projects from a set of Features
+  - [x] Features may require prequisite Features
+    - [x] if prequisite Feature is removed from Project, Features that depend on it do not count toward timespan calculations and will not be part of the game
   - [x] game name can be randomized
 - [x] time passes
   - [ ] the passing of time moves project development further

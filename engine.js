@@ -279,8 +279,6 @@ class Project {
 
 		};
 
-		this.isFinished  = () => this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0;
-
 		this.paused      = false;
 		this.abandoned   = false;
 		this.published   = false;
@@ -311,6 +309,7 @@ class Project {
 
 	};
 
+	get finished () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0; };
 };
 
 let Projects = {

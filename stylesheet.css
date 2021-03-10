@@ -349,7 +349,7 @@ main article h1 {
 	
 }
 
-main article h1 + section { margin-block-start: 1em; }
+main article h1 ~ section { margin-block-start: 1.5em; }
 
 
 /*  >> Subcategories  */

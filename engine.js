@@ -720,6 +720,14 @@ function renderProjectScreen () {
 		</div>
 	`);
 
+	fragment.append(html`
+		<div class="controls">
+
+			<button function="start">Start Developing</button>
+
+		</div>
+	`);
+
 	return fragment;
 
 };
@@ -1113,6 +1121,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("input",  `[name="paused"]`,                            handlePauseStateChange);
 
 	Gator(document).on("input",  `[name="tab"]`,                               handleTabSwitch);
+
+	Gator(document).on("click",  `[function="start"]`,                         Projects.start);
 
 
 	// >> Optional Starting Settings

@@ -180,13 +180,21 @@ const VIEWS = {
 
 					<h1>Current</h1>
 
-					...
+					<div>
+
+						${projects.current.map(project => Project.render(project))}
+
+					</div>
 
 					<section>
 
 						<h2>Finished</h2>
 
-						...
+						<div>
+
+							${projects.finished.map(project => Project.render(project))}
+							
+						</div>
 
 					</section>
 
@@ -196,7 +204,11 @@ const VIEWS = {
 
 					<h1>Published</h1>
 
-					...
+					<div>
+
+						${projects.published.map(project => Project.render(project))}
+
+					</div>
 
 				</section>
 
@@ -204,7 +216,11 @@ const VIEWS = {
 
 					<h1>Abandoned</h1>
 
-					...
+					<div>
+
+						${projects.abandoned.map(project => Project.render(project))}
+
+					</div>
 
 				</section>
 

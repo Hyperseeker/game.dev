@@ -268,7 +268,7 @@ class Feature {
 
 	};
 
-	get finished () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0 };
+	get finished () { return this.features.list.map(feature => feature.timespan.left()).reduce((accumulator, timespan) => accumulator += timespan) === 0 };
 
 };
 
@@ -347,9 +347,9 @@ class Project {
 
 		this.timespan    = {
 
-			get current () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.total() - feature.timespan.left()) },
+			get current () { return self.features.list.map(feature => feature.timespan.current).reduce((accumulator, timespan) => accumulator += timespan) },
 
-			get total   () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.total()) }
+			get total   () { return self.features.list.map(feature => feature.timespan.total).reduce((accumulator, timespan) => accumulator += timespan) }
 
 		};
 
@@ -371,7 +371,7 @@ class Project {
 
 	};
 
-	get finished () { return this.features.list.reduce((accumulator, feature) => accumulator += feature.timespan.left()) === 0; };
+	get finished () { return this.features.list.map(feature => feature.timespan.left()).reduce((accumulator, timespan) => accumulator += timespan) === 0 };
 
 	static render (project) {
 

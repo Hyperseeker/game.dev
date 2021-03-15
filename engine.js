@@ -1018,12 +1018,6 @@ function renderComponentPrequisites (component) {
 
 };
 
-function renderComplexityEffort () {
-
-	document.querySelector("main .hours").innerText = calculateProjectDuration();
-
-};
-
 function updateUIComponent (id, data) {
 
 	let handler = {

@@ -493,6 +493,18 @@ label,
 	
 }
 
+.controls { display: flex; }
+
+.controls [function] { border-radius: var(--border-radius); }
+.controls [function="start"] {
+
+	flex: 1;
+
+	background-color: var(--theme-color-primary);
+	
+	color: var(--theme-color-background);
+}
+
 
 /*  >>> Special Component Styles  */
 

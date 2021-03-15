@@ -475,10 +475,11 @@ label,
 
 /*  >>> TEMP: Derived  */
 
+.effort,
+.controls { margin-block-start: 3em; }
+
 .effort {
-	
-	margin-block-start: 3em;
-	
+
 	font-size: 1.25em;
 	text-align: center;
 	

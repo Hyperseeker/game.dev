@@ -294,6 +294,8 @@ class Project {
 
 	constructor (planner) {
 
+		let self = this;
+
 		this.id = ID.generate();
 
 		// * if at start there's no name to the game, assign one
@@ -355,7 +357,7 @@ class Project {
 
 			if (this.paused) return;
 
-			let currentFeature = this.features.current,
+			let currentFeature = self.features.current,
 				timespan       = currentFeature.timespan;
 
 			// TODO: use skill modifiers and project multiplicity modifier in calculations of advancement

@@ -513,7 +513,7 @@ function handleCheckboxToggle (event) {
 				
 	});
 
-	renderComplexityEffort();
+	updateUIComponent("projectDuration", { duration: calculateProjectDuration() });
 
 };
 
@@ -529,7 +529,7 @@ function handleRangeChange (event) {
 
 	updateComponentDetails(range);
 
-	renderComplexityEffort();
+	updateUIComponent("projectDuration", { duration: calculateProjectDuration() });
 
 };
 
@@ -545,7 +545,7 @@ function handleRadioSwitch (event) {
 
 	updateComponentDetails(radio);
 
-	renderComplexityEffort();
+	updateUIComponent("projectDuration", { duration: calculateProjectDuration() });
 
 };
 
@@ -1028,7 +1028,8 @@ function updateUIComponent (id, data) {
 
 	let handler = {
 
-		"time" (data) { return ELEMENTS.time.setAttribute("datetime", `${data.time}:00`); }
+		"time"            (data) { return ELEMENTS.time.setAttribute("datetime", `${data.time}:00`);                },
+		"projectDuration" (data) { return VIEWS.Elements.planner.querySelector(".hours").innerText = data.duration; }
 
 	};
 

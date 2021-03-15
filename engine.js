@@ -391,25 +391,25 @@ class Project {
 
 			<fieldset class="project">
 
-			<legend>${project.title}</legend>
+				<legend>${project.title}</legend>
 
-			<label>
+				<label>
 
-				<input type="checkbox" project="${project.id}">
+					<input type="checkbox" project="${project.id}">
 
-				<div toggle="pause">
+					<div toggle="pause">
 
-					${pause}
+						${pause}
 
-					${resume}
-					
-				</div>
+						${resume}
+						
+					</div>
 
-			</label>
+				</label>
 
-			<span class="timespan">
-				⏱ <span class="current">${project.timespan.current}</span> <span class="separator">/</span> <span class="total">${project.timespan.total}</span>
-			</span>
+				<span class="timespan">
+					⏱ <span class="current">${project.timespan.current}</span> <span class="separator">/</span> <span class="total">${project.timespan.total}</span>
+				</span>
 
 			</fieldset>
 

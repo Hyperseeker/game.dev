@@ -708,11 +708,13 @@ function renderProjectScreen () {
 
 	let fragment = renderComponentsList();
 
+	let duration = calculateProjectDuration();
+
 	fragment.append(html`
 		<div class="effort">
 
 			This game would take
-			<div class="hours">${calculateProjectDuration()}</div>
+			<div class="hours">${duration}</div>
 			hours to develop
 
 		</div>

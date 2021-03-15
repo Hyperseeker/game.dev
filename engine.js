@@ -299,7 +299,7 @@ class Project {
 		this.id = ID.generate();
 
 		// * if at start there's no name to the game, assign one
-		this.title = planner.title.trim() || Common.generateGameName();
+		this.title = planner.title.toString().trim() || Common.generateGameName();
 
 		this.features = {
 

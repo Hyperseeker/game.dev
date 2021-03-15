@@ -457,7 +457,13 @@ let Projects = {
 		let planner = Projects.planned,
 			project = new Project(planner);
 
-		return Projects.list.last = project;
+		Projects.plan();
+
+		// TODO: switch tabs to overview
+
+		Projects.list.last = project;
+
+		return VIEWS.render.overview();
 
 	},
 

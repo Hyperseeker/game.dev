@@ -560,7 +560,17 @@ let Projects = {
 
 	},
 
-	advance       () { return Projects.current.forEach(project => project.advance()) }
+	advance       () {
+
+		let projects = Projects.current;
+
+		if (!projects.length) return;
+
+		projects.forEach(project => project.advance());
+
+		return VIEWS.render.overview();
+
+	}
 
 };
 

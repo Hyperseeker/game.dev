@@ -770,21 +770,21 @@ function renderProjectScreen () {
 	let duration = calculateProjectDuration();
 
 	fragment.append(html`
-		<div class="effort">
+		<article class="effort">
 
 			This game would take
 			<div class="hours">${duration}</div>
 			hours to develop
 
-		</div>
+		</article>
 	`);
 
 	fragment.append(html`
-		<div class="controls">
+		<article class="controls">
 
 			<button function="start">Start Developing</button>
 
-		</div>
+		</article>
 	`);
 
 	return fragment;

@@ -391,7 +391,7 @@ class Project {
 
 	static render (project) {
 
-		if (!project) throw "Project.render(): function requires `project`";
+		if (!project) throw "Project.render(): function requires argument `project`";
 
 		let pause = html`
 			<svg class="pause" xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 847 847">

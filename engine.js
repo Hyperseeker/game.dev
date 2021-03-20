@@ -483,7 +483,8 @@ let Projects = {
 
 	get abandoned () { return Projects.list.filter(project => project.abandoned) },
 
-	get finished  () { return Projects.list.filter(project => project.finished) },
+	// ? consider the possibility of early-access releases for later
+	get finished  () { return Projects.list.filter(project => project.finished && !project.published) },
 
 	get published () { return Projects.list.filter(project => project.published) },
 

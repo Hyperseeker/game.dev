@@ -112,7 +112,7 @@ const GAMEPLAY = {
 	Time: {
 
 		current: 0,
-		getFullHour () { return GAMEPLAY.Time.current % 24 },
+		getFullHour () { return Math.floor(GAMEPLAY.Time.current % 24) },
 
 		pause: {
 

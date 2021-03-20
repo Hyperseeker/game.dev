@@ -204,11 +204,6 @@ const VIEWS = {
 
 		overview () {
 
-			// TODO:
-			// *  1. get a list of all the projects
-			// *  2. sort projects by category, delimited by a header (current → finished → abandoned)
-			// *  3. render each project element with progress etc. (use different function → `Projects.render()`?)
-
 			const CATEGORIES = [
 				"current", 
 				"finished", 

@@ -288,6 +288,20 @@ const VIEWS = {
 
 		project  () {}
 
+	},
+
+	set (view) {
+
+		document.body.setAttribute("display", view);
+
+	},
+
+	force (view) {
+
+		VIEWS.set(view);
+
+		ELEMENTS.sidebar.querySelector(`[target="${view}"]`).checked = true;
+
 	}
 
 };

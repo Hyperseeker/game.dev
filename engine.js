@@ -710,7 +710,7 @@ function handleTabSwitch (event) {
 	let tab = event.target,
 		view = tab.getAttribute("target");
 
-	document.body.setAttribute("display", view);
+	VIEWS.set(view);
 
 };
 

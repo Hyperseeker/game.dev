@@ -168,7 +168,7 @@ const GAMEPLAY = {
 			"sleep"
 
 		],
-		getCurrentPreoccupation () { return GAMEPLAY.Time.schedule[GAMEPLAY.Time.getFullHour() - 1] },
+		getCurrentPreoccupation () { return GAMEPLAY.Time.schedule[GAMEPLAY.Time.getFullHour()] },
 
 		progress () {
 

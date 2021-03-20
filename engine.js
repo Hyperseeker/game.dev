@@ -512,11 +512,11 @@ let Projects = {
 
 		Projects.plan();
 
-		// TODO: switch tabs to overview
-
 		Projects.list.last = project;
 
-		return VIEWS.render.overview();
+		VIEWS.render.overview();
+
+		return VIEWS.force("overview");
 
 	},
 

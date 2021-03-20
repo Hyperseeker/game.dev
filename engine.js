@@ -519,6 +519,48 @@ class Project {
 
 	}
 
+	static pause (event) {
+
+		let project = Project.parseProjectDOMEvent(event);
+
+		project.paused = !project.paused;
+
+		return VIEWS.render.overview();
+
+	}
+
+	static publish (event) {
+
+		let project = Project.parseProjectDOMEvent(event);
+
+		project.published = true;
+
+		return VIEWS.render.overview();
+
+	};
+
+	static abandon (event) {
+
+		let project = Project.parseProjectDOMEvent(event);
+
+		project.abandoned = true;
+
+		return VIEWS.render.overview();
+
+	};
+
+	// TODO: "unabandon" option
+	//    *   for returning to previously-difficult projects that have since become less difficult
+
+	static parseProjectDOMEvent (event) {
+
+		let parent = event.target.closest(".project");
+		let id     = parent.getAttribute("project-id");
+
+		return Projects.list.find(project => project.id === id);
+
+	}
+
 };
 
 let Projects = {
@@ -1244,6 +1286,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Gator(document).on("input",  `[name="tab"]`,                               handleTabSwitch);
 
 	Gator(document).on("click",  `[function="start"]`,                         Projects.start);
+
+	Gator(document).on("click",  `[control="pause"]`,                          Project.pause);
+	Gator(document).on("click",  `[control="publish"]`,                        Project.publish);
+	Gator(document).on("click",  `[control="abandon"]`,                        Project.abandon);
 
 
 	// >> Optional Starting Settings

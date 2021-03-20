@@ -433,31 +433,69 @@ class Project {
 
 		if (!project) throw "Project.render(): function requires argument `project`";
 
+		let states    = [ "paused", "finished", "abandoned", "published" ];
+		let state     = states.filter(state => project[state]);
 
+		let classname = `project ${state.join(" ")}`.trim();
 
 		let template = html`
 
-			<fieldset class="project">
+			<fieldset class=${classname} project-id="${project.id}">
 
 				<legend>${project.title}</legend>
 
-				<label>
+				<span class="timespan">
 
-					<input type="checkbox" project="${project.id}">
+					⏱
+					<span class="current">${Math.floor(project.timespan.current)}</span>
+					<span class="separator">/</span>
+					<span class="total">${project.timespan.total}</span>
 
-					<div toggle="pause">
+				</span>
 
-						${pause}
+				<div class="panel">
+				
+					<div class="button" control="pause">
+					
+						<span class="pause">
 
-						${resume}
-						
+							${ICONS.pause}
+							<span>Pause</span>
+
+						</span>
+
+						<span class="resume">
+
+							${ICONS.resume}
+							<span>Resume</span>
+
+						</span>
+
 					</div>
 
-				</label>
+					<div class="button" control="publish">
+					
+						<span class="publish">
 
-				<span class="timespan">
-					⏱ <span class="current">${project.timespan.current}</span> <span class="separator">/</span> <span class="total">${project.timespan.total}</span>
-				</span>
+							${ICONS.publish}
+							<span>Publish</span>
+
+						</span>
+
+					</div>
+
+					<div class="button" control="abandon">
+					
+						<span class="abandon">
+
+							<span>Abandon</span>
+							${ICONS.abandon}
+
+						</span>
+
+					</div>
+				
+				</div>
 
 			</fieldset>
 

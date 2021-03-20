@@ -336,16 +336,20 @@ aside .tab input { left: clamp(var(--tab-padding), 2.5vw, 30%); }
 
 main {
 	
-	max-width: 75ch;
+    height:     100vh;
 	
 	padding:   5%;
 	
+    overflow:   auto;
+
+    box-sizing: border-box;
+
 }
 
 
 /*  >> Categories  */
 
-main article { /* ... */ }
+main article           { max-width:         75ch; }
 main article + article { margin-block-start: 3em; }
 
 main article h1 {
@@ -362,7 +366,7 @@ main article h1 ~ section { margin-block-start: 1.5em; }
 
 /*  >> Subcategories  */
 
-main section { /* ... */ }
+main section { max-width: 75ch; }
 
 main section + section { margin-block-start: 3em; }
 

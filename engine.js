@@ -176,7 +176,8 @@ const GAMEPLAY = {
 
 			GAMEPLAY.Time.current += GAMEPLAY.Time.getTrueTempo();
 
-			if (GAMEPLAY.Time.getCurrentPreoccupation() === "project") Projects.advance();
+			// TODO: implement schedule display
+			/* if (GAMEPLAY.Time.getCurrentPreoccupation() === "project") */ Projects.advance();
 
 			// TODO: advance skills if working on a project
 

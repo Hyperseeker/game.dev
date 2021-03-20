@@ -14,6 +14,50 @@ const PROCESS_NAME     = "project";
 
 // > DATA
 
+const ICONS = {
+
+	get pause () {
+		
+		return html`
+			<svg xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 847 847">
+				<path d="M62 777V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H118c-31 0-56-25-56-57zm419 0V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H537c-31 0-56-25-56-57z"/>
+			</svg>
+		`
+		
+	},
+
+	get resume () {
+		
+		return html`
+			<svg xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 207 240">
+				<path d="M196 101L33 3C21-5 0 3 0 22v196c0 19 21 27 33 19l163-98c14-9 14-29 0-38z"/>
+			</svg>
+		`
+		
+	},
+
+	get publish () {
+		
+		return html`
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 85">
+				<path d="M37 23v35h16V23h11L45 0 26 23h11zm42 62H0V39h15v31h60V39h15v46H79z"/>
+			</svg>
+		`
+		
+	},
+
+	get abandon () {
+
+		return html`
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+				<path d="M44 37l-7 7a2 2 0 01-2 0L23 32 11 44a2 2 0 01-3 0l-7-7a2 2 0 010-2l12-12L1 11a2 2 0 010-3l7-7a2 2 0 013 0l12 12L35 1a2 2 0 012 0l7 7a2 2 0 010 3L32 23l12 12a2 2 0 010 2z"/>
+			</svg>
+		`
+
+	}
+
+};
+
 const ELEMENTS = {
 
 	main:    document.querySelector("main"),
@@ -393,17 +437,7 @@ class Project {
 
 		if (!project) throw "Project.render(): function requires argument `project`";
 
-		let pause = html`
-			<svg class="pause" xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 847 847">
-				<path d="M62 777V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H118c-31 0-56-25-56-57zm419 0V69c0-31 25-56 56-56h191c31 0 57 25 57 56v708c0 32-26 57-57 57H537c-31 0-56-25-56-57z"/>
-			</svg>
-		`;
 
-		let resume = html`
-			<svg class="resume" xmlns="http://www.w3.org/2000/svg" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" viewBox="0 0 207 240">
-				<path d="M196 101L33 3C21-5 0 3 0 22v196c0 19 21 27 33 19l163-98c14-9 14-29 0-38z"/>
-			</svg>
-		`;
 
 		let template = html`
 

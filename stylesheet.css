@@ -361,14 +361,13 @@ main article h1 {
 	
 }
 
-main article h1 ~ section { margin-block-start: 1.5em; }
-
 
 /*  >> Subcategories  */
 
 main section { max-width: 75ch; }
 
-main section + section { margin-block-start: 3em; }
+main article h1 ~ section,
+main section + section { margin-block-start: 2.5em; }
 
 main section h2 {
 	

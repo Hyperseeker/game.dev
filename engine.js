@@ -772,9 +772,7 @@ function renderProjectScreen () {
 	fragment.append(html`
 		<article class="effort">
 
-			This game would take
-			<div class="hours">${duration}</div>
-			hours to develop
+			<span class="hours">${duration}</span> hours to finish this game
 
 		</article>
 	`);

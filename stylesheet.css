@@ -579,55 +579,120 @@ time::after {
 
 /*  > PROJECTS  */
 
-.project.finished [toggle] { display: none; }
+main section {
 
-.project [type="checkbox"] {
+	--project-padding: var(--base-fieldset__padding);
+	--icon-size:       1em;
 
-	position: absolute;
-	top:      0;
-	left:     0;
-
-	visibility: hidden;
-
-	pointer-events: none;
- 
 }
+main div:empty::after {
 
-.project [toggle] {
-	
+	/* * rough sizing according to the computed size of a `.project` */
+	--min-height: calc( var(--icon-size) + var(--project-padding) * 2 + ( (var(--label-padding) * 2) + 1em ) );
+
+	content: "No projects yet";
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
-	width:  2em;
-	height: 2em;
 
-	border: 1px solid;
+	min-height: var(--min-height);
+
+	color: grey;
+
+
+
+}
+
+.project {
+
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.project .panel {
+
+	display: flex;
+	justify-content: stretch;
+	
+	width: 100%;
+	min-height: var(--icon-size);
+
+	margin-block-start: 0.5em;
+	margin-block-end:  -0.5em;
+
+}
+
+.project .panel .button {
+
 	border-radius: var(--border-radius);
 
-	background-color: var(--theme-color-text);
+	padding: 0.5em 0.66em;
 
-	padding: 0.5em;
+	background-color: var(--panel-button-theme);
+	color: var(--theme-color-background);
+
+	fill: var(--theme-color-background);
+
+	cursor: pointer;
+
+}
+.project .panel .button + .button { margin-inline-start: 0.25em; }
+.project .panel .button + [control="abandon"] { margin-inline-start: auto; }
+
+.project .panel .button > span {
+
+	display: flex;
+	align-items: center;
+
+}
+
+.project .panel .button svg {
+	
+	width:  var(--icon-size);
+	height: var(--icon-size);
+
+	margin-inline-end: 0.5em;
 
 	box-sizing: border-box;
 
-}
-
-.project                             [toggle="pause"] svg { fill: var(--theme-color-background); }
-
-.project                             [toggle="pause"] .resume { display: none;    }
-
-.project [type="checkbox"]:checked + [toggle="pause"] .pause  { display: none;    }
-.project [type="checkbox"]:checked + [toggle="pause"] .resume { display: initial; }
-
-.project .timespan {
-	
-	/* * temporary spacing */
-	float: right;
-
-	font-size: 1.25em;
+	vertical-align: text-top;
 
 }
+
+.project .panel [control="abandon"] svg {
+
+	margin-inline-end: 0;
+	margin-inline-start: 0.5em;
+
+}
+
+.project                .panel [control="pause"] .pause  { display: initial; }
+.project                .panel [control="pause"] .resume { display: none;    }
+
+.project.paused         .panel [control="pause"] .pause  { display: none;    }
+.project.paused         .panel [control="pause"] .resume { display: initial; }
+
+.project:not(.finished) .panel [control="publish"]       { display: none;    }
+
+.project.finished       .panel [control="pause"]         { display: none;    }
+.project.finished       .panel [control="publish"]       { display: initial; }
+.project.finished       .panel [control="abandon"]       { display: none;    }
+
+.project.published      .panel [control="publish"]       { display: none;    }
+
+.project.abandoned      .panel [control="pause"]         { display: none;    }
+.project.abandoned      .panel [control="abandon"]       { display: none;    }
+
+/* TODO: store type colors globally */
+[control="pause"]   { --panel-button-theme: hsl(  0,   0%, 68%); }
+[control="publish"] { --panel-button-theme: hsl(120, 100%, 15%); }
+[control="abandon"] { --panel-button-theme: hsl(  0, 100%, 25%); }
+
+.project .timespan { font-size: 1.5em; }
 
 .project .timespan .separator {
 

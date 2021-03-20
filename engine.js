@@ -522,6 +522,12 @@ let Projects = {
 
 	get published () { return Projects.list.filter(project => project.published) },
 
+	get           (id) {
+
+		return Projects.list.find(project => project.id === id)
+
+	},
+
 	plan          () {
 
 		Projects.planned    = new ProjectPlanner();

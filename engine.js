@@ -415,7 +415,7 @@ class Project {
 
 		this.advance     = () => {
 
-			if (this.paused) return;
+			if (self.paused) return;
 
 			let currentFeature = self.features.current,
 				timespan       = currentFeature.timespan;
